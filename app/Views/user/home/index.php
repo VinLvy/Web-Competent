@@ -26,7 +26,7 @@
     <div class="container">
         <?php foreach ($profil as $descper) : ?>
             <div class="text-center mb-5">
-                <h1 class="text-primary text-uppercase" style="letter-spacing: 1px;"><?php echo lang('Blog.titleAboutUs')  ?></h1>
+                <h1 class="text-primary text-uppercase" style=""><?php echo lang('Blog.titleAboutUs')  ?></h1>
             </div>
             <div class="row">
                 <div class="col-lg-6 mb-4 mb-lg-0" style="min-height: 500px; position: relative;">
@@ -51,7 +51,7 @@
 </div>
 
 <!-- END block-2 -->
-<hr style="border: 1px solid #ff7f00; width: 50%; margin: 20px auto;">
+<hr style="border: 1px solid #fb0404; width: 50%; margin: 20px auto;">
 
 <div class="container-fluid pt-5">
     <div class="container">
@@ -114,7 +114,7 @@
     </div>
 </div>
 
-<hr style="border: 1px solid #ff7f00; width: 50%; margin: 20px auto;">
+<hr style="border: 1px solid #fb0404; width: 50%; margin: 20px auto;">
 
 <!-- News With Sidebar Start -->
 <div class="container-fluid mt-5 pt-3">
