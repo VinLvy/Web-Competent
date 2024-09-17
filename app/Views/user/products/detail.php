@@ -11,7 +11,7 @@
     <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 420px; background-image: url('/asset-user/images/hero_1.jpg'); background-size: cover;">
         <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">
             <?php foreach ($profil as $perusahaan) : ?>
-                <?php echo lang('Blog.titleOurproducts');
+                <?php echo lang('Blog.titleOurTraining');
                 if (!empty($perusahaan)) {
                     echo ' ' . $perusahaan->nama_perusahaan;
                 } ?>

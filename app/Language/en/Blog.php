@@ -16,7 +16,7 @@ return [
     'btnSeeMoreBlogs' => 'Other Blogs',
     'btnMoreTraining' => 'Other Training Topics',
     'titleOurTraining' => 'Training Topics of',
-    'titleOurblogs' => 'Blogs of',
+    'titleOurBlogs' => 'Blogs of',
     'titleClients' => 'Clients of',
     'titleOurContact' => 'Contacts of',
     'titleAboutUs' => 'About Us',

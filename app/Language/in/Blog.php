@@ -16,7 +16,7 @@ return [
     'btnSeeMoreBlogs' => 'Blog Lainnya',
     'btnMoreTraining' => 'Materi Pelatihan Lainnya',
     'titleOurTraining' => 'Materi Pelatihan dari',
-    'titleOurblogs' => 'Blog dari',
+    'titleOurBlogs' => 'Blog dari',
     'titleClients' => 'Klien dari',
     'titleOurContact' => 'Kontak dari',
     'titleAboutUs' => 'Tentang Kami',
