@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 fixed-top">
             <div class="logo" style="margin-left: 20px;">
                 <a href="<?= base_url('/') ?>" class="logo">
-                    <img src="<?= base_url('asset-user/images/') . $header->logo_perusahaan ?>" alt="<?= $header->nama_perusahaan ?>" class="img-fluid logo-img" style="height: 50px; width: 50px;">
+                    <img src="<?= base_url('asset-user/images/') . $header->logo_perusahaan ?>" alt="<?= $header->nama_perusahaan ?>" class="img-fluid logo-img" style="height: 50px; width: 120px;">
                 </a>
             </div>
 
@@ -19,13 +19,13 @@
                         <?php echo lang('Blog.headerAbout'); ?>
                     </a>
                     <a href="<?= base_url('artikel') ?>" class="nav-item nav-link <?= uri_string() == 'artikel' ? 'active' : '' ?>">
-                        <?php echo lang('Blog.headerArticle'); ?>
+                        <?php echo lang('Blog.headerBlogs'); ?>
                     </a>
                     <a href="<?= base_url('product') ?>" class="nav-item nav-link <?= uri_string() == 'product' ? 'active' : '' ?>">
-                        <?php echo lang('Blog.headerProducts'); ?>
+                        <?php echo lang('Blog.headerTraining'); ?>
                     </a>
                     <a href="<?= base_url('activities') ?>" class="nav-item nav-link <?= uri_string() == 'activities' ? 'active' : '' ?>">
-                        <?php echo lang('Blog.headerActivities'); ?>
+                        <?php echo lang('Blog.headerClients'); ?>
                     </a>
                     <a href="<?= base_url('contact') ?>" class="nav-item nav-link <?= uri_string() == 'contact' ? 'active' : '' ?>">
                         <?php echo lang('Blog.headerContact'); ?>
@@ -58,13 +58,14 @@
     }
 
     .nav-link {
-        color: #444;
+        color: #000;
         transition: color 0.3s;
+        
     }
 
     .nav-link.active {
         position: relative;
-        color: #f46c25 !important;
+        color: #fb0404 !important;
         font-weight: bold;
     }
 
@@ -73,14 +74,14 @@
         display: block;
         width: 100%;
         height: 3px;
-        background-color: #f46c25;
+        background-color: ;
         position: absolute;
         bottom: -5px;
         left: 0;
     }
 
     .nav-link:hover {
-        color: #f46c25;
+        color: #fb0404;
     }
 
     .navbar-toggler {
@@ -89,7 +90,7 @@
 
     .dropdown-menu {
         border-radius: 0;
-        border-color: #f46c25;
+        border-color: #fb0404;
     }
 
     .dropdown-item {
@@ -97,7 +98,7 @@
     }
 
     .dropdown-item:hover {
-        background-color: #f46c25;
+        background-color: #fb0404;
         color: white;
     }
 </style>
