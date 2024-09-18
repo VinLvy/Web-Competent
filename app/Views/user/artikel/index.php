@@ -24,17 +24,14 @@
 <!-- News With Sidebar Start -->
 <div class="container-fluid mt-5 pt-3">
     <div class="container">
-        <div class="row">
-            <!-- <div class="mb-5">
-                <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary" style="text-align: left;">Artikel Terbaru</h5>
-            </div> -->
-            <div class="mb-5">
-                <img src="<?= base_url('asset-user/images/news.png') ?>" alt="Logo" style="width: 50px; height: auto; text-align: left;">
+        <div class="row justify-content-center">
+            <div class="text-center mb-5">
+                <h1 class="text-primary text-uppercase" style=""><?php echo lang('Blog.btnOurblogs'); ?></h1>
             </div>
         </div>
         <br>
         <br>
-        <div class="row">
+        <div class="row justify-content-center">
             <?php foreach ($artikelterbaru as $row) : ?>
                 <div class="col-lg-4 mb-4">
                     <div class="article-card position-relative d-flex flex-column h-100 mb-3">
@@ -50,8 +47,6 @@
                         </div>
                     </div>
                 </div>
-
-
             <?php endforeach; ?>
         </div>
     </div>
@@ -59,7 +54,8 @@
 
 <style>
     .intro-section h1 {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust the shadow parameters as needed */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        /* Adjust the shadow parameters as needed */
     }
 
     .article-card {

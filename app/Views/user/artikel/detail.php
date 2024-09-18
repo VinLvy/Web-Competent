@@ -76,7 +76,7 @@
                         <div class="bg-white border border-top-0 p-3">
                             <?php foreach ($artikel_lain as $artikel_item) : ?>
                                 <div class="d-flex align-items-center bg-white mb-3 article-item">
-                                    <a href="<?= base_url('/artikel/detail/' .$artikel_item->id_artikel) ?>">
+                                    <a href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>">
                                         <img class="img-fluid article-image" src="<?= base_url('asset-user/images/' . $artikel_item->foto_artikel); ?>" loading="lazy">
                                     </a>
                                     <div class="w-100 h-100 d-flex flex-column justify-content-center border border-left-0 article-content">
@@ -89,10 +89,7 @@
                             <?php endforeach; ?>
                         </div>
                     </div>
-                    <!-- Popular News End -->
                 </div>
-
-
                 <!-- Popular News End -->
             </div>
         </div>
