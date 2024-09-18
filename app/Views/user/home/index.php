@@ -56,28 +56,26 @@
 <div class="container-fluid pt-5">
     <div class="container">
         <div class="text-center mb-5">
-            <h1 class="text-primary text-uppercase" style="letter-spacing: 1px;"><?php echo lang('Blog.btnOurproducts'); ?></h1>
+            <h1 class="text-primary text-uppercase"><?php echo lang('Blog.btnOurtraining'); ?></h1>
         </div>
         <div class="row justify-content-center">
-            <?php 
+            <?php
             $count = 0;
-            foreach ($tbproduk as $produk) : 
-                if ($count >= 3) break; 
+            foreach ($tbproduk as $produk) :
+                if ($count >= 3) break;
             ?>
-                <div class="col-lg-6 mb-5">
-                    <div class="article-card row align-items-center">
-                        <div class="col-sm-5">
-                            <a href="<?= base_url('product/detail/' . $produk->id_produk . '/' . url_title($produk->nama_produk_en) . '_' . url_title($produk->nama_produk_in)) ?>" class="article-card-link">
-                                <img class="img-fluid mb-3 mb-sm-0 lazyload" data-src="asset-user/images/<?= $produk->foto_produk; ?>" alt="<?php if (lang('Blog.Languange') == 'en') {
-                                                                                                                                                echo $produk->nama_produk_en;
-                                                                                                                                            } ?>
+                <div class="col-lg-6 mb-5 px-4"> <!-- Menambahkan class px-3 untuk memberi jarak samping -->
+                    <a href="<?= base_url('product/detail/' . $produk->id_produk . '/' . url_title($produk->nama_produk_en) . '_' . url_title($produk->nama_produk_in)) ?>" class="article-card-link" style="text-decoration: none;">
+                        <div class="article-card row align-items-center" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                            <div class="col-sm-5" style="padding: 15px;">
+                                <img class="img-fluid mb-3 mb-sm-0 lazyload" style="border-radius: 10px;" data-src="asset-user/images/<?= $produk->foto_produk; ?>" alt="<?php if (lang('Blog.Languange') == 'en') {
+                                                                                                                                                                                echo $produk->nama_produk_en;
+                                                                                                                                                                            } ?>
                                 <?php if (lang('Blog.Languange') == 'in') {
                                     echo $produk->nama_produk_in;
                                 } ?>" class="img-fluid lazyload">
-                            </a>
-                        </div>
-                        <div class="col-sm-7">
-                            <a href="<?= base_url('product/detail/' . $produk->id_produk . '/' . url_title($produk->nama_produk_en) . '_' . url_title($produk->nama_produk_in)) ?>" class="article-card-link">
+                            </div>
+                            <div class="col-sm-7">
                                 <h3 class="h3-link"><?php if (lang('Blog.Languange') == 'en') {
                                                         echo $produk->nama_produk_en;
                                                     } ?>
@@ -85,42 +83,42 @@
                                         echo $produk->nama_produk_in;
                                     } ?>
                                 </h3>
-                            </a>
-                            <p class="m-0">
-                                <?php
-                                $lang = lang('Blog.Languange');
-                                $deskripsi_produk = ($lang == 'en') ? $produk->deskripsi_produk_en : $produk->deskripsi_produk_in;
+                                <p class="">
+                                    <?php
+                                    $lang = lang('Blog.Languange');
+                                    $deskripsi_produk = ($lang == 'en') ? $produk->deskripsi_produk_en : $produk->deskripsi_produk_in;
 
-                                // Mengambil 20 kata pertama dari deskripsi produk
-                                $deskripsi_produk_20_kata = implode(' ', array_slice(str_word_count($deskripsi_produk, 1), 0, 15));
+                                    // Mengambil 20 kata pertama dari deskripsi produk
+                                    $deskripsi_produk_20_kata = implode(' ', array_slice(str_word_count($deskripsi_produk, 1), 0, 15));
 
-                                echo $deskripsi_produk_20_kata . '...';
-                                ?>
-                            </p>
-                            <a class="read-more-link" href="<?= base_url('product/detail/' . $produk->id_produk . '/' . url_title($produk->nama_produk_en) . '_' . url_title($produk->nama_produk_in)) ?>">
-                                <p class="read-more-btn"><?= lang('Blog.btnReadmore'); ?></p>
-                            </a>
+                                    echo $deskripsi_produk_20_kata . '...';
+                                    ?>
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-            <?php 
-                $count++; 
-            endforeach; 
+            <?php
+                $count++;
+            endforeach;
             ?>
         </div>
         <div class="text-center">
-            <a href="<?= base_url('product') ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn"><?= lang('Blog.btnMoreProducts'); ?></a>
+            <a href="<?= base_url('product') ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn"><?= lang('Blog.btnMoreTraining'); ?></a>
         </div>
     </div>
 </div>
 
-<hr style="border: 1px solid #fb0404; width: 50%; margin: 20px auto;">
+
+
+
+<hr style="border: 1px solid #fb0404; width: 50%; margin-top: 70px;">
 
 <!-- News With Sidebar Start -->
 <div class="container-fluid mt-5 pt-3">
     <div class="container">
         <div class="text-center mb-5">
-            <h1 class="text-primary text-uppercase" style="letter-spacing: 1px;"><?php echo lang('Blog.btnOurarticle'); ?></h1>
+            <h1 class="text-primary text-uppercase" style=""><?php echo lang('Blog.btnOurblogs'); ?></h1>
         </div>
         <div class="row">
             <!-- <div class="mb-5">
@@ -130,10 +128,10 @@
         <br>
         <br>
         <div class="row">
-            <?php 
+            <?php
             $count = 0;
-            foreach ($artikelterbaru as $row) : 
-                if ($count >= 3) break; 
+            foreach ($artikelterbaru as $row) :
+                if ($count >= 3) break;
             ?>
                 <div class="col-lg-4 mb-4">
                     <div class="article-card position-relative d-flex flex-column h-100 mb-3">
@@ -149,13 +147,13 @@
                         </div>
                     </div>
                 </div>
-            <?php 
-                $count++; 
-            endforeach; 
+            <?php
+                $count++;
+            endforeach;
             ?>
         </div>
         <div class="text-center mb-5">
-            <a href="<?= base_url('artikel') ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn"><?= lang('Blog.btnSeeMoreArticles'); ?></a>
+            <a href="<?= base_url('artikel') ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn"><?= lang('Blog.btnSeeMoreBlogs'); ?></a>
         </div>
     </div>
 </div>
@@ -170,6 +168,8 @@
 
     .article-card {
         transition: transform 0.3s, box-shadow 0.3s;
+        background-color: #fccb04;
+      
     }
 
     .article-card:hover {
