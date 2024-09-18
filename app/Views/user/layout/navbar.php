@@ -18,10 +18,10 @@
                     <a href="<?= base_url('about') ?>" class="nav-item nav-link <?= uri_string() == 'about' ? 'active' : '' ?>">
                         <?php echo lang('Blog.headerAbout'); ?>
                     </a>
-                    <a href="<?= base_url('artikel') ?>" class="nav-item nav-link <?= uri_string() == 'artikel' ? 'active' : '' ?>">
+                    <a href="<?= base_url('artikel') ?>" class="nav-item nav-link <?= (uri_string() == 'artikel' || strpos(uri_string(), 'artikel/detail') === 0) ? 'active' : '' ?>">
                         <?php echo lang('Blog.headerBlogs'); ?>
                     </a>
-                    <a href="<?= base_url('product') ?>" class="nav-item nav-link <?= uri_string() == 'product' ? 'active' : '' ?>">
+                    <a href="<?= base_url('product') ?>" class="nav-item nav-link <?= (uri_string() == 'product' || strpos(uri_string(), 'product/detail') === 0) ? 'active' : '' ?>">
                         <?php echo lang('Blog.headerTraining'); ?>
                     </a>
                     <a href="<?= base_url('activities') ?>" class="nav-item nav-link <?= uri_string() == 'activities' ? 'active' : '' ?>">
