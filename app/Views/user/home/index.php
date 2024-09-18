@@ -22,7 +22,7 @@
 
 <!-- END services -->
 
-<div class="container-fluid py-5">
+<div class="container-fluid py-5" style="background-color: #fccb04; margin-top: 40px;">
     <div class="container">
         <?php foreach ($profil as $descper) : ?>
             <div class="text-center mb-5">
@@ -50,6 +50,7 @@
     </div>
 </div>
 
+
 <!-- END block-2 -->
 <hr style="border: 1px solid #fb0404; width: 50%; margin: 20px auto;">
 
@@ -64,7 +65,7 @@
             foreach ($tbproduk as $produk) :
                 if ($count >= 3) break;
             ?>
-                <div class="col-lg-6 mb-5 px-4"> <!-- Menambahkan class px-3 untuk memberi jarak samping -->
+                <div class="col-lg-6 mb-5 px-4"> 
                     <a href="<?= base_url('product/detail/' . $produk->id_produk . '/' . url_title($produk->nama_produk_en) . '_' . url_title($produk->nama_produk_in)) ?>" class="article-card-link" style="text-decoration: none;">
                         <div class="article-card row align-items-center" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                             <div class="col-sm-5" style="padding: 15px;">
