@@ -61,10 +61,14 @@
         <div class="row justify-content-center">
             <?php
             $count = 0;
-            foreach ($tbproduk as $produk) :
+            $total_products = count($tbproduk);
+            foreach ($tbproduk as $index => $produk) :
                 if ($count >= 3) break;
+
+                // Menentukan apakah ini produk terakhir dan ganjil
+                $is_last_odd = ($index == $total_products - 1) && ($total_products % 2 != 0);
             ?>
-                <div class="col-lg-6 mb-5 px-4">
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 px-4 <?php if ($is_last_odd) echo 'd-flex justify-content-center'; ?>">
                     <a href="<?= base_url('product/detail/' . $produk->id_produk . '/' . url_title($produk->nama_produk_en) . '_' . url_title($produk->nama_produk_in)) ?>" class="article-card-link" style="text-decoration: none;">
                         <div class="article-card row align-items-center" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                             <div class="col-sm-5" style="padding: 15px;">
@@ -86,10 +90,15 @@
                                 <p style="color: #555;">
                                     <?php
                                     $lang = lang('Blog.Languange');
+
+                                    // Memilih deskripsi berdasarkan bahasa
                                     $deskripsi_produk = ($lang == 'en') ? $produk->deskripsi_produk_en : $produk->deskripsi_produk_in;
 
-                                    // Mengambil 20 kata pertama dari deskripsi produk
-                                    $deskripsi_produk_20_kata = implode(' ', array_slice(str_word_count($deskripsi_produk, 1), 0, 15));
+                                    // Menghapus tag HTML dari deskripsi
+                                    $deskripsi_produk_bersih = strip_tags($deskripsi_produk);
+
+                                    // Memotong deskripsi menjadi 20 kata pertama
+                                    $deskripsi_produk_20_kata = implode(' ', array_slice(str_word_count($deskripsi_produk_bersih, 1), 0, 15));
 
                                     echo $deskripsi_produk_20_kata . '...';
                                     ?>
@@ -108,6 +117,7 @@
         </div>
     </div>
 </div>
+
 
 
 <hr style="border: 1px solid #fb0404; width: 50%; margin-top: 70px;">
@@ -132,7 +142,7 @@
                     <!-- Membuat seluruh card bisa ditekan -->
                     <a href="<?= base_url('/artikel/detail/' . $row->id_artikel) ?>" style="text-decoration: none;">
                         <div class="article-card position-relative d-flex flex-column h-100 mb-3" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                        <img class="img-fluid w-100" style="object-fit: cover;" src="<?= base_url('asset-user/images/' . $row->foto_artikel); ?>" alt="<?= $row->judul_artikel; ?>" loading="lazy">
+                            <img class="img-fluid w-100" style="object-fit: cover;" src="<?= base_url('asset-user/images/' . $row->foto_artikel); ?>" alt="<?= $row->judul_artikel; ?>" loading="lazy">
                             <div class="border border-top-0 p-4 flex-grow-1" style="border-radius: 0 0 15px 15px;">
                                 <!-- <div class="mb-2">
                                     <p><?= date('d F Y', strtotime($row->created_at)); ?></p>
@@ -153,7 +163,6 @@
         </div>
     </div>
 </div>
-
 <!-- End News With Sidebar -->
 
 <style>
