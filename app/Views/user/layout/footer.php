@@ -17,7 +17,7 @@
             </p>
             <hr style="border: 1px solid #fff; width: 50%; margin: 20px auto;">
             <p class="mb-2 text-white">Copyright &copy;. All Rights Reserved.</p>
-            <p class="m-0 text-white">Designed by Luv</p>
+            <!-- <p class="m-0 text-white">Designed by Luv</p> -->
         </div>
     <?php endforeach; ?>
 </div>
