@@ -123,46 +123,57 @@
 <hr style="border: 1px solid #fb0404; width: 50%; margin-top: 70px;">
 
 <!-- News With Sidebar Start -->
-<div class="container-fluid mt-5 pt-3">
+<div class="container-fluid pt-5 mb-3">
     <div class="container">
-        <div class="text-center mb-5">
+    <div class="text-center mb-5">
             <h1 class="text-primary text-uppercase" style=""><?php echo lang('Blog.btnOurblogs'); ?></h1>
         </div>
-        <div class="row justify-content-center">
-        </div>
-        <br>
-        <br>
         <div class="row">
-            <?php
-            $count = 0;
-            foreach ($artikelterbaru as $row) :
-                if ($count >= 3) break;
-            ?>
-                <div class="col-lg-4 mb-4">
-                    <!-- Membuat seluruh card bisa ditekan -->
-                    <a href="<?= base_url('/artikel/detail/' . $row->id_artikel) ?>" style="text-decoration: none;">
-                        <div class="article-card position-relative d-flex flex-column h-100 mb-3" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                            <img class="img-fluid w-100" style="object-fit: cover;" src="<?= base_url('asset-user/images/' . $row->foto_artikel); ?>" alt="<?= $row->judul_artikel; ?>" loading="lazy">
-                            <div class="border border-top-0 p-4 flex-grow-1" style="border-radius: 0 0 15px 15px;">
-                                <!-- <div class="mb-2">
-                                    <p><?= date('d F Y', strtotime($row->created_at)); ?></p>
-                                </div> -->
-                                <h4 class="h4 display-5" style="color: #000;"><?= substr(strip_tags($row->judul_artikel), 0, 25) ?>...</h4>
-                                <p style="color: #555;"><?= substr(strip_tags($row->deskripsi_artikel), 0, 30) ?>...</p>
-                            </div>
+            <div class="col-lg-8">
+                <!-- Menampilkan artikel terbaru secara otomatis -->
+                <div class="position-relative mb-3">
+                    <img class="img-fluid w-100" src="<?= base_url('asset-user/images/' . $artikelterbaru[0]->foto_artikel); ?>" style="object-fit: cover;">
+                    <div class="bg-white border border-top-0 p-4">
+                        <div class="mb-3">
+                            <a class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikelterbaru[0]->created_at)); ?></a>
                         </div>
-                    </a>
+                        <h1 class="display-5 mb-2 article-title"><?= $artikelterbaru[0]->judul_artikel; ?></h1>
+                        <p class="fs-5"><?= $artikelterbaru[0]->deskripsi_artikel; ?></p>
+                    </div>
                 </div>
-            <?php
-                $count++;
-            endforeach;
-            ?>
-        </div>
-        <div class="text-center mb-5">
-            <a href="<?= base_url('artikel') ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn text-white"><?= lang('Blog.btnSeeMoreBlogs'); ?></a>
+                <!-- End Artikel Terbaru -->
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Menampilkan artikel lainnya -->
+                <div class="mb-3">
+                    <div class="row">
+                        <!-- <div class="mb-5">
+                            <img src="<?= base_url('asset-user/images/news.png') ?>" alt="Logo" style="width: 50px; height: auto; text-align: left;">
+                        </div> -->
+                        <div class="bg-white border border-top-0 p-3">
+                            <?php foreach (array_slice($artikelterbaru, 1) as $artikel_item) : ?>
+                                <div class="d-flex align-items-center bg-white mb-3 article-item">
+                                    <a href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>">
+                                        <img class="img-fluid article-image" src="<?= base_url('asset-user/images/' . $artikel_item->foto_artikel); ?>" loading="lazy">
+                                    </a>
+                                    <div class="w-100 h-100 d-flex flex-column justify-content-center border border-left-0 article-content">
+                                        <div class="mb-2">
+                                            <a class="text-body" href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>"><small><?= date('d F Y', strtotime($artikel_item->created_at)); ?></small></a>
+                                        </div>
+                                        <a class="h6 m-0 display-7" href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>"><?= substr($artikel_item->judul_artikel, 0, 20) ?>...</a>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Artikel Lainnya -->
+            </div>
         </div>
     </div>
 </div>
+
 <!-- End News With Sidebar -->
 
 <style>

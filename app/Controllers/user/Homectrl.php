@@ -25,11 +25,14 @@ class Homectrl extends BaseController
 
     public function index()
     {
+        $artikelTerbaru = $this->ArtikelModel->getArtikelTerbaru();
+
         $data = [
             'profil' => $this->ProfilModel->findAll(),
             'tbslider' => $this->SliderModel->findAll(),
             'tbproduk' => $this->ProdukModel->findAll(),
-            'artikelterbaru' => $this->ArtikelModel->getArtikelTerbaru(), // Fetch the latest articles
+            'artikel_terbaru' => $artikelTerbaru[0], // Mendapatkan artikel terbaru pertama
+            'artikelterbaru' => $artikelTerbaru, // Artikel lainnya tetap ditampilkan di home
         ];
 
         $data['Title'] = $data['profil'][0]->title_website;
@@ -47,6 +50,7 @@ class Homectrl extends BaseController
 
         return view('user/home/index', $data);
     }
+
 
     public function redirectToHome()
     {
