@@ -1,4 +1,4 @@
-<div class="container-fluid footer text-white mt-2 pt-2 px-0 position-relative" style="background-color: #555; background-image: url(''); background-size: cover;">
+<div class="container-fluid footer text-white mt-2 pt-2 px-0 position-relative" style="background-color: #040404; background-image: url(''); background-size: cover;">
     <?php foreach ($profil as $footer) : ?>
         <?php
             // Extract phone number from WhatsApp link
