@@ -25,4 +25,5 @@ return [
     'headerLanguange' => 'Languange',
     'Languange' => 'en',
     'contactInformation' => 'Contact Information',
+    'titleAlsoread' => 'Also Read',
 ];

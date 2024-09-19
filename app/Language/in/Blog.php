@@ -25,4 +25,5 @@ return [
     'headerLanguange' => 'Bahasa',
     'Languange' => 'in',
     'contactInformation' => 'Informasi Kontak',
+    'titleAlsoread' => 'Baca Juga',
 ];

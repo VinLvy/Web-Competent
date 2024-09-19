@@ -1,4 +1,4 @@
-<?= $this->extend('user/template/template') ?>
+ <?= $this->extend('user/template/template') ?>
 <?= $this->Section('content'); ?>
 
 <div class="intro-section mb-5 position-relative overlay-bottom">

@@ -2,47 +2,68 @@
 <?= $this->Section('content'); ?>
 
 <style>
-    .article-title {
-        white-space: normal;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        width: 100%;
-    }
-
     .article-item {
         display: flex;
         height: 110px;
-        /* Tinggi card sesuai dengan tinggi gambar */
         overflow: hidden;
-        /* Sembunyikan overflow */
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .article-item:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .article-image {
         width: 110px;
         height: 110px;
         object-fit: cover;
+        border-radius: 5px 0 0 5px;
     }
 
     .article-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        flex: 1;
         padding: 0 1rem;
         white-space: normal;
-        /* Izinkan teks membungkus ke baris berikutnya */
         overflow: hidden;
-        /* Sembunyikan overflow yang tidak perlu */
         text-overflow: ellipsis;
-        /* Tambahkan ellipsis pada teks yang terlalu panjang */
+    }
+
+    .article-content a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .article-content .article-title {
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 0;
+        white-space: nowrap;
+        
+        text-decoration: none;
+    }
+
+    .article-content small {
+        color: #888;
+    }
+
+    /* Memastikan seluruh card bisa diklik */
+    .article-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .article-link:hover {
+        text-decoration: none; /* Pastikan tidak ada garis bawah saat hover */
     }
 </style>
+
 <div class="container-fluid page-header py-5" style="background-image: url('<?= base_url('./asset-user/images/hero_1.jpg'); ?>');">
-
 </div>
-</div>
-
-
 
 <!-- News With Sidebar Start -->
 <div class="container-fluid pt-5 mb-3">
@@ -67,25 +88,22 @@
                 <!-- Popular News Start -->
                 <div class="mb-3">
                     <div class="row">
-                        <div class="mb-5">
-                            <!-- <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary" style="text-align: left;">Baca Juga</h5> -->
-                            <img src="<?= base_url('asset-user/images/news.png') ?>" alt="Logo" style="width: 50px; height: auto; text-align: left;">
+                        <div class="mb-3"> <!-- Mengurangi margin bottom -->
+                            <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary title-alsoread" style="text-align: left;"><?php echo lang('Blog.titleAlsoread'); ?></h5>
                         </div>
-
-                        <br>
                         <div class="bg-white border border-top-0 p-3">
                             <?php foreach ($artikel_lain as $artikel_item) : ?>
-                                <div class="d-flex align-items-center bg-white mb-3 article-item">
-                                    <a href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>">
+                                <a href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>" class="article-link">
+                                    <div class="d-flex align-items-center bg-white mb-3 article-item">
                                         <img class="img-fluid article-image" src="<?= base_url('asset-user/images/' . $artikel_item->foto_artikel); ?>" loading="lazy">
-                                    </a>
-                                    <div class="w-100 h-100 d-flex flex-column justify-content-center border border-left-0 article-content">
-                                        <div class="mb-2">
-                                            <a class="text-body" href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>"><small><?= date('d F Y', strtotime($artikel_item->created_at)); ?></small></a>
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-center article-content">
+                                            <!-- <div class="mb-2">
+                                                <small><?= date('d F Y', strtotime($artikel_item->created_at)); ?></small>
+                                            </div> -->
+                                            <div class="article-title"><?= $artikel_item->judul_artikel ?></div>
                                         </div>
-                                        <a class="h6 m-0 display-7" href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>"><?= substr($artikel_item->judul_artikel, 0, 20) ?>...</a>
                                     </div>
-                                </div>
+                                </a>
                             <?php endforeach; ?>
                         </div>
                     </div>

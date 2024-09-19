@@ -25,8 +25,11 @@
     <div class="container">
         <?php foreach ($profil as $descper) : ?>
             <div class="row">
-                <div class="col-lg-6 mb-4 mb-lg-0" style="min-height: 300px; position: relative;">
-                    <img class="w-100 h-100 img-fluid img-overlap lazyload" data-src="asset-user/images/<?= $descper->foto_utama; ?>" alt="<?= $descper->nama_perusahaan; ?>">
+                <div class="col-lg-6 mb-4 mb-lg-0" style="position: relative;">
+                    <img class="w-100 img-fluid img-overlap lazyload" 
+                         style="object-fit: cover;" 
+                         data-src="asset-user/images/<?= $descper->foto_utama; ?>" 
+                         alt="<?= $descper->nama_perusahaan; ?>">
                 </div>
                 <div class="col-lg-5 ml-auto">
                     <h1 class="mb-3"><?= $descper->nama_perusahaan; ?></h1>
@@ -43,6 +46,8 @@
         <?php endforeach; ?>
     </div>
 </div>
+
+
 <style>
     .intro-section h1 {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
