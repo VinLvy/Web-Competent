@@ -34,18 +34,21 @@ class Productsctrl extends BaseController
             $nama_perusahaan = $data['profil'][0]->nama_perusahaan;
             $deskripsi_perusahaan = strip_tags($data['profil'][0]->deskripsi_perusahaan_in);
             
-            $data['Title'] = $data['tbproduk']->nama_produk_in ?? 'Produk';
-            $teks = "Produk dari $nama_perusahaan. $deskripsi_perusahaan";
+            $data['Title'] = $data['tbproduk']->nama_produk_in ?? 'Materi Pelatihan';
+            $teks = "Materi Pelatihan dari $nama_perusahaan. $deskripsi_perusahaan";
         } else {
             $nama_perusahaan = $data['profil'][0]->nama_perusahaan;
             $deskripsi_perusahaan = strip_tags($data['profil'][0]->deskripsi_perusahaan_en);
 
-            $data['Title'] = $data['tbproduk']->nama_produk_en ?? 'Products';
-            $teks = "Products of $nama_perusahaan. $deskripsi_perusahaan";
+            $data['Title'] = $data['tbproduk']->nama_produk_en ?? 'Training Topics';
+            $teks = "Training Topics of $nama_perusahaan. $deskripsi_perusahaan";
         }
 
         $batasan = 150;
         $data['Meta'] = character_limiter($teks, $batasan);
+
+        // Set default title
+        // $data['Title'] = lang('Blog.headerTraining');
 
         return view('user/products/index', $data);
     }

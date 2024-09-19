@@ -35,7 +35,7 @@ class Artikelctrl extends BaseController
         $data['Meta'] = character_limiter($metaDescription, 150);
 
         // Set default title
-        $data['Title'] = 'Artikel';
+        $data['Title'] = lang('Blog.headerBlogs');
 
         return view('user/artikel/index', $data);
     }

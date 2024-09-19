@@ -34,7 +34,7 @@ class Contactctrl extends BaseController
             $nama_perusahaan = $data['profil'][0]->nama_perusahaan;
             $deskripsi_perusahaan = strip_tags($data['profil'][0]->deskripsi_perusahaan_in);
 
-            $data['Title'] = $data['tbaktivitas']->nama_aktivitas_in ?? 'Kotak';
+            $data['Title'] = $data['tbaktivitas']->nama_aktivitas_in ?? 'Kontak';
             $teks = "Contact of $nama_perusahaan. $deskripsi_perusahaan";
         } else {
             $nama_perusahaan = $data['profil'][0]->nama_perusahaan;

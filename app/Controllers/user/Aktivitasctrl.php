@@ -39,18 +39,21 @@ class Aktivitasctrl extends BaseController
             $nama_perusahaan = $data['profil'][0]->nama_perusahaan;
             $deskripsi_perusahaan = strip_tags($data['profil'][0]->deskripsi_perusahaan_in);
 
-            $data['Title'] = $data['tbproduk']->nama_produk_in ?? 'Aktivitas';
-            $teks = "Aktivitas dari $nama_perusahaan. $deskripsi_perusahaan";
+            $data['Title'] = $data['tbproduk']->nama_produk_in ?? 'Klien';
+            $teks = "Klien dari $nama_perusahaan. $deskripsi_perusahaan";
         } else {
             $nama_perusahaan = $data['profil'][0]->nama_perusahaan;
             $deskripsi_perusahaan = strip_tags($data['profil'][0]->deskripsi_perusahaan_en);
 
-            $data['Title'] = $data['tbproduk']->nama_produk_en ?? 'Activities';
-            $teks = "Activities of $nama_perusahaan. $deskripsi_perusahaan";
+            $data['Title'] = $data['tbproduk']->nama_produk_en ?? 'Clients';
+            $teks = "Clients of $nama_perusahaan. $deskripsi_perusahaan";
         }
 
         $batasan = 150;
         $data['Meta'] = character_limiter($teks, $batasan);
+
+        // Set default title
+        // $data['Title'] = lang('Blog.headerClients');
 
         return view('user/aktivitas/index', $data);
     }
