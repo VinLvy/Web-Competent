@@ -22,7 +22,7 @@
 
 <!-- END services -->
 
-<div class="container-fluid py-5" style="background-color: rgb(252,203,4); margin-top: 40px; border-radius: 15px;">
+<div class="container-fluid py-5" style="background-color: #E1EFE6; margin-top: 40px; border-radius: 15px;">
     <div class="container">
         <?php foreach ($profil as $descper) : ?>
             <div class="text-center mb-5">
@@ -43,7 +43,7 @@
                         }
                         ?>
                     </p>
-                    <a href="<?= base_url('about') ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn text-white"><?= lang('Blog.btnReadmore'); ?></a>
+                    <a href="<?= base_url('about') ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn text-black"><?= lang('Blog.btnReadmore'); ?></a>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -113,14 +113,14 @@
             ?>
         </div>
         <div class="text-center">
-            <a href="<?= base_url('product') ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn text-white"><?= lang('Blog.btnMoreTraining'); ?></a>
+            <a href="<?= base_url('product') ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn text-black"><?= lang('Blog.btnMoreTraining'); ?></a>
         </div>
     </div>
 </div>
 
 
 
-<hr style="border: 1px solid #fb0404; width: 50%; margin-top: 70px;">
+<hr style="border: 1px solid #fccb04; width: 50%; margin-top: 70px;">
 
 <!-- News With Sidebar Start -->
 <div class="container-fluid pt-5 mb-3">
@@ -184,7 +184,7 @@
 
     .article-card {
         transition: transform 0.3s, box-shadow 0.3s;
-        background-color: #fccb04;
+        background-color: #E1EFE6;
 
     }
 
