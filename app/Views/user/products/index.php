@@ -24,24 +24,30 @@
 <div class="container-fluid pt-5">
     <div class="container">
         <div class="text-center mb-5">
-            <h1 class="text-primary text-uppercase" style="letter-spacing: 1px;"><?php echo lang('Blog.btnOurproducts'); ?></h1>
+            <h1 class="text-primary text-uppercase"><?php echo lang('Blog.btnOurtraining'); ?></h1>
         </div>
         <div class="row justify-content-center">
-            <?php foreach ($tbproduk as $produk) : ?>
-                <div class="col-lg-6 mb-5">
-                    <div class="article-card row align-items-center">
-                        <div class="col-sm-5">
-                            <a href="<?= base_url('product/detail/' . $produk->id_produk . '/' . url_title($produk->nama_produk_en) . '_' . url_title($produk->nama_produk_in)) ?>" class="article-card-link">
-                                <img class="img-fluid mb-3 mb-sm-0 lazyload" data-src="asset-user/images/<?= $produk->foto_produk; ?>" alt="<?php if (lang('Blog.Languange') == 'en') {
-                                                                                                                                                echo $produk->nama_produk_en;
-                                                                                                                                            } ?>
+            <?php
+            $count = 0;
+            $total_products = count($tbproduk);
+            foreach ($tbproduk as $index => $produk) :
+                if ($count >= 3) break;
+
+                // Menentukan apakah ini produk terakhir dan ganjil
+                $is_last_odd = ($index == $total_products - 1) && ($total_products % 2 != 0);
+            ?>
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 px-4 <?php if ($is_last_odd) echo 'd-flex justify-content-center'; ?>">
+                    <a href="<?= base_url('product/detail/' . $produk->id_produk . '/' . url_title($produk->nama_produk_en) . '_' . url_title($produk->nama_produk_in)) ?>" class="article-card-link" style="text-decoration: none;">
+                        <div class="article-card row align-items-center" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                            <div class="col-sm-5" style="padding: 15px;">
+                                <img class="img-fluid mb-3 mb-sm-0 lazyload" style="border-radius: 10px;" data-src="asset-user/images/<?= $produk->foto_produk; ?>" alt="<?php if (lang('Blog.Languange') == 'en') {
+                                                                                                                                                                                echo $produk->nama_produk_en;
+                                                                                                                                                                            } ?>
                                 <?php if (lang('Blog.Languange') == 'in') {
                                     echo $produk->nama_produk_in;
                                 } ?>" class="img-fluid lazyload">
-                            </a>
-                        </div>
-                        <div class="col-sm-7">
-                            <a href="<?= base_url('product/detail/' . $produk->id_produk . '/' . url_title($produk->nama_produk_en) . '_' . url_title($produk->nama_produk_in)) ?>" class="article-card-link">
+                            </div>
+                            <div class="col-sm-7">
                                 <h3 class="h3-link"><?php if (lang('Blog.Languange') == 'en') {
                                                         echo $produk->nama_produk_en;
                                                     } ?>
@@ -49,37 +55,43 @@
                                         echo $produk->nama_produk_in;
                                     } ?>
                                 </h3>
-                            </a>
-                            <p class="m-0">
-                                <?php
-                                $lang = lang('Blog.Languange');
-                                $deskripsi_produk = ($lang == 'en') ? $produk->deskripsi_produk_en : $produk->deskripsi_produk_in;
+                                <p style="color: #555;">
+                                    <?php
+                                    $lang = lang('Blog.Languange');
 
-                                // Mengambil 20 kata pertama dari deskripsi produk
-                                $deskripsi_produk_20_kata = implode(' ', array_slice(str_word_count($deskripsi_produk, 1), 0, 15));
+                                    // Memilih deskripsi berdasarkan bahasa
+                                    $deskripsi_produk = ($lang == 'en') ? $produk->deskripsi_produk_en : $produk->deskripsi_produk_in;
 
-                                echo $deskripsi_produk_20_kata . '...';
-                                ?>
-                            </p>
-                            <a class="read-more-link" href="<?= base_url('product/detail/' . $produk->id_produk . '/' . url_title($produk->nama_produk_en) . '_' . url_title($produk->nama_produk_in)) ?>">
-                                <p class="read-more-btn"><?= lang('Blog.btnReadmore'); ?></p>
-                            </a>
+                                    // Menghapus tag HTML dari deskripsi
+                                    $deskripsi_produk_bersih = strip_tags($deskripsi_produk);
+
+                                    // Memotong deskripsi menjadi 20 kata pertama
+                                    $deskripsi_produk_20_kata = implode(' ', array_slice(str_word_count($deskripsi_produk_bersih, 1), 0, 15));
+
+                                    echo $deskripsi_produk_20_kata . '...';
+                                    ?>
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-            <?php endforeach; ?>
+            <?php
+                $count++;
+            endforeach;
+            ?>
         </div>
     </div>
 </div>
 
 <style>
     .intro-section h1 {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust the shadow parameters as needed */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .article-card {
         transition: transform 0.3s, box-shadow 0.3s;
-        cursor: pointer;
+        background-color: #E1EFE6;
+
     }
 
     .article-card:hover {
@@ -104,6 +116,12 @@
 
     .read-more-btn:hover {
         text-decoration: underline;
+    }
+
+    .custom-btn {
+        padding-left: 30px;
+        padding-right: 30px;
+        border-radius: 25px;
     }
 </style>
 
