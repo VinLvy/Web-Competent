@@ -6,7 +6,7 @@
 
 <!-- END slider -->
 
-<div class="popular_destination_area">
+<div class="popular_destination_area" style="background-color: #fccb04; padding: 50px 0; margin: 0;">
     <div class="container">
         <?php foreach ($profil as $title) :  ?>
             <div class="row justify-content-center">
@@ -19,10 +19,9 @@
         <?php endforeach; ?>
     </div>
 </div>
-
 <!-- END services -->
 
-<div class="container-fluid py-5" style="background-color: #E1EFE6; margin-top: 40px; border-radius: 15px;">
+<div class="container-fluid py-5" style="background-color: #fffbf2; border-radius: 15px;">
     <div class="container">
         <?php foreach ($profil as $descper) : ?>
             <div class="text-center mb-5">
@@ -53,7 +52,7 @@
 
 <!-- <hr style="border: 1px solid #fb0404; width: 50%; margin: 20px auto;"> -->
 
-<div class="container-fluid pt-5">
+<div class="container-fluid pt-5" style="background-color: #fffbf2;">
     <div class="container">
         <div class="text-center mb-5">
             <h1 class="text-primary text-uppercase"><?php echo lang('Blog.btnOurtraining'); ?></h1>
@@ -184,7 +183,7 @@
 
     .article-card {
         transition: transform 0.3s, box-shadow 0.3s;
-        background-color: #E1EFE6;
+        background-color: #fccb04;
 
     }
 

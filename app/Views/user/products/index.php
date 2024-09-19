@@ -90,7 +90,7 @@
 
     .article-card {
         transition: transform 0.3s, box-shadow 0.3s;
-        background-color: #E1EFE6;
+        background-color: #fccb04;
 
     }
 
