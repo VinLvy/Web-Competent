@@ -29,7 +29,6 @@
         padding: 0 1rem;
         white-space: normal;
         overflow: hidden;
-        text-overflow: ellipsis;
     }
 
     .article-content a {
@@ -37,13 +36,10 @@
         color: inherit;
     }
 
-    .article-content .article-title {
-        font-size: 1rem;
+    .article-title {
+        
         font-weight: bold;
         margin: 0;
-        white-space: nowrap;
-        
-        text-decoration: none;
     }
 
     .article-content small {
@@ -55,11 +51,14 @@
         text-decoration: none;
         color: inherit;
         display: block;
+        width: 100%;
     }
 
     .article-link:hover {
         text-decoration: none; /* Pastikan tidak ada garis bawah saat hover */
     }
+
+    
 </style>
 
 <div class="container-fluid page-header py-5" style="background-image: url('<?= base_url('./asset-user/images/hero_1.jpg'); ?>');">
@@ -88,7 +87,7 @@
                 <!-- Popular News Start -->
                 <div class="mb-3">
                     <div class="row">
-                        <div class="mb-3"> <!-- Mengurangi margin bottom -->
+                        <div class="mb-3">
                             <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary title-alsoread" style="text-align: left;"><?php echo lang('Blog.titleAlsoread'); ?></h5>
                         </div>
                         <div class="bg-white border border-top-0 p-3">
@@ -97,10 +96,7 @@
                                     <div class="d-flex align-items-center bg-white mb-3 article-item">
                                         <img class="img-fluid article-image" src="<?= base_url('asset-user/images/' . $artikel_item->foto_artikel); ?>" loading="lazy">
                                         <div class="w-100 h-100 d-flex flex-column justify-content-center article-content">
-                                            <!-- <div class="mb-2">
-                                                <small><?= date('d F Y', strtotime($artikel_item->created_at)); ?></small>
-                                            </div> -->
-                                            <div class="article-title"><?= $artikel_item->judul_artikel ?></div>
+                                            <h6 class="article-title"><?= $artikel_item->judul_artikel ?></h6>
                                         </div>
                                     </div>
                                 </a>
