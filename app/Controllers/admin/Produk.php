@@ -38,9 +38,8 @@ class Produk extends BaseController
 
     public function proses_tambah()
     {
-        // Pengecekan apakah pengguna sudah login atau belum
         if (!session()->get('logged_in')) {
-            return redirect()->to(base_url('login')); // Ubah 'login' sesuai dengan halaman login kamu
+            return redirect()->to(base_url('login'));
         }
         date_default_timezone_set('Asia/Jakarta');
         $file_foto = $this->request->getFile('foto_produk');
@@ -74,8 +73,11 @@ class Produk extends BaseController
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back()->withInput();
         } else {
+            // Ganti spasi dengan tanda "-"
+            $nama_produk_in_sanitized = str_replace(' ', '-', $nama_produk_in);
+            $nama_produk_en_sanitized = str_replace(' ', '-', $nama_produk_en);
 
-            $newFileName = "{$nama_produk_en}_{$nama_produk_in}_{$currentDateTime}.{$file_foto->getExtension()}";
+            $newFileName = "{$nama_produk_in_sanitized}_{$nama_produk_en_sanitized}_{$currentDateTime}.{$file_foto->getExtension()}";
             $file_foto->move('asset-user/images', $newFileName);
 
             $produkModel = new ProdukModel();
@@ -142,11 +144,15 @@ class Produk extends BaseController
             if (file_exists($oldFilePath)) {
                 unlink($oldFilePath);
             }
+
+            // Ganti spasi dengan tanda "-"
+            $nama_produk_in_sanitized = str_replace(' ', '-', $nama_produk_in);
+            $nama_produk_en_sanitized = str_replace(' ', '-', $nama_produk_en);
+
             // Generate new file name
             $currentDateTime = date('dmYHis');
-            $newFileName = "{$nama_produk_en}_{$nama_produk_in}_{$currentDateTime}.{$file_foto->getExtension()}";
+            $newFileName = "{$nama_produk_en_sanitized}_{$nama_produk_in_sanitized}_{$currentDateTime}.{$file_foto->getExtension()}";
 
-            $file_foto = $this->request->getFile('foto_produk');
             $file_foto->move('asset-user/images', $newFileName);
         } else {
             // If no new 'foto_produk' file is uploaded, keep the old filename
@@ -168,8 +174,6 @@ class Produk extends BaseController
         session()->setFlashdata('success', 'Berkas berhasil diperbarui');
         return redirect()->to(base_url('admin/produk/index'));
     }
-
-
 
 
     public function delete($id = false)

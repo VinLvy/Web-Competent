@@ -66,12 +66,15 @@ class Aktivitas extends BaseController
                     'mime_in' => 'File yang anda pilih wajib berekstensikan jpg/jpeg/png'
                 ]
             ]
-
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->back()->withInput();
         } else {
-            $newFileName = "{$nama_aktivitas_en}_{$nama_aktivitas_in}_{$currentDateTime}.{$file_foto->getExtension()}";
+            $newFileName = "{$nama_aktivitas_in}_{$nama_aktivitas_en}_{$currentDateTime}.{$file_foto->getExtension()}";
+
+            // Ganti spasi dengan tanda -
+            $newFileName = str_replace(' ', '-', $newFileName);
+
             $file_foto->move('asset-user/images', $newFileName);
 
             $aktivitasModel = new AktivitasModel();
@@ -88,6 +91,7 @@ class Aktivitas extends BaseController
             return redirect()->to(base_url('admin/aktivitas/index'));
         }
     }
+
 
     public function edit($id_aktivitas)
     {
@@ -138,7 +142,11 @@ class Aktivitas extends BaseController
             unlink('asset-user/images/' . $aktivitasData->foto_aktivitas);
 
             // Upload the new 'foto_aktivitas' file
-            $newFileName = "{$nama_aktivitas_en}_{$nama_aktivitas_in}_{$currentDateTime}.{$file_foto->getExtension()}";
+            $newFileName = "{$nama_aktivitas_in}_{$nama_aktivitas_en}_{$currentDateTime}.{$file_foto->getExtension()}";
+
+            // Ganti spasi dengan tanda -
+            $newFileName = str_replace(' ', '-', $newFileName);
+
             $file_foto->move('asset-user/images', $newFileName);
 
             // Update the 'foto_aktivitas' field in the database with a "where" clause
@@ -169,6 +177,7 @@ class Aktivitas extends BaseController
         session()->setFlashdata('success', 'Berkas berhasil diperbarui');
         return redirect()->to(base_url('admin/aktivitas/index'));
     }
+
 
     public function delete($id = false)
     {

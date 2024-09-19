@@ -46,7 +46,7 @@ class Artikel extends BaseController
             return redirect()->to(base_url('login')); // Sesuaikan dengan halaman login Anda
         }
 
-        // Proses validasi input disini
+        // Proses validasi input di sini
 
         // Validasi foto artikel
         if (!$this->validate([
@@ -66,14 +66,20 @@ class Artikel extends BaseController
             // Simpan artikel ke dalam database
             $file_foto = $this->request->getFile('foto_artikel');
             $currentDateTime = date('dmYHis');
-            $newFileName = "{$currentDateTime}.{$file_foto->getExtension()}";
+            $judul_artikel = $this->request->getVar('judul_artikel');
+
+            // Format nama file foto seperti dua controller lainnya
+            $newFileName = "{$judul_artikel}_{$currentDateTime}.{$file_foto->getExtension()}";
+
+            // Ganti spasi dengan tanda -
+            $newFileName = str_replace(' ', '-', $newFileName);
+
             $file_foto->move('asset-user/images', $newFileName);
 
             $data = [
                 'judul_artikel' => $this->request->getPost('judul_artikel'),
                 'deskripsi_artikel' => $this->request->getPost('deskripsi_artikel'),
                 'foto_artikel' => $newFileName
-                // Tambahkan field lain sesuai kebutuhan
             ];
 
             $this->artikelModel->insert($data);
@@ -82,13 +88,13 @@ class Artikel extends BaseController
         }
     }
 
-
     public function edit($id_artikel)
     {
         // Pengecekan apakah pengguna sudah login atau belum
         if (!session()->get('logged_in')) {
-            return redirect()->to(base_url('login')); // Ubah 'login' sesuai dengan halaman login kamu
+            return redirect()->to(base_url('login')); // Sesuaikan dengan halaman login Anda
         }
+
         $artikel_model = new ArtikelModel();
         $artikelData = $artikel_model->find($id_artikel);
         $validation = \Config\Services::validation();
@@ -112,7 +118,6 @@ class Artikel extends BaseController
         }
 
         // Validasi input
-
         $file_foto = $this->request->getFile('foto_artikel');
 
         // Jika file foto di-upload
@@ -124,8 +129,14 @@ class Artikel extends BaseController
                 unlink($oldFilePath);
             }
 
-            // Simpan foto baru
-            $newFileName = $file_foto->getRandomName();
+            // Format nama file foto seperti dua controller lainnya
+            $judul_artikel = $this->request->getVar('judul_artikel');
+            $currentDateTime = date('dmYHis');
+            $newFileName = "{$judul_artikel}_{$currentDateTime}.{$file_foto->getExtension()}";
+
+            // Ganti spasi dengan tanda -
+            $newFileName = str_replace(' ', '-', $newFileName);
+
             $file_foto->move('asset-user/images', $newFileName);
         } else {
             // Jika tidak ada file foto baru, gunakan foto lama
@@ -137,27 +148,23 @@ class Artikel extends BaseController
         $data = [
             'judul_artikel' => $this->request->getPost('judul_artikel'),
             'deskripsi_artikel' => $this->request->getPost('deskripsi_artikel'),
-            'foto_artikel' => $newFileName, // Gunakan nama file foto baru atau lama
+            'foto_artikel' => $newFileName
         ];
 
         // Update data artikel dalam database
         $this->artikelModel->update($id_artikel, $data);
 
-        // Redirect ke halaman admin artikel
         return redirect()->to(base_url('admin/artikel/index'));
     }
-
-
-
 
     public function delete($id = false)
     {
         // Pengecekan apakah pengguna sudah login atau belum
         if (!session()->get('logged_in')) {
-            return redirect()->to(base_url('login')); // Ubah 'login' sesuai dengan halaman login kamu
+            return redirect()->to(base_url('login')); // Sesuaikan dengan halaman login Anda
         }
-        $artikelModel = new ArtikelModel();
 
+        $artikelModel = new ArtikelModel();
         $data = $artikelModel->find($id);
 
         unlink('asset-user/images/' . $data->foto_artikel);
