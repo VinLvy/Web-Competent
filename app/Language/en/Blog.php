@@ -13,6 +13,7 @@ return [
     'btnReadmore' => 'Read More',
     'btnOurtraining' => 'Our Training Topics',
     'btnOurblogs' => 'Our Blogs',
+    'btnOurclient' => 'Our Clients',
     'btnSeeMoreBlogs' => 'Other Blogs',
     'btnMoreTraining' => 'Other Training Topics',
     'titleOurTraining' => 'Training Topics of',

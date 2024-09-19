@@ -13,61 +13,51 @@
                 ?>
             <?php endforeach; ?>
         </h1>
-        <!-- <div class="d-inline-flex mb-lg-5">
-                <p class="m-0 text-white"><a class="text-white" href="<?= base_url('/') ?>"><?php echo lang('Blog.headerHome'); ?></a></p>
-                <p class="m-0 text-white px-2">/</p>
-                <p class="m-0 text-white"><?php echo lang('Blog.headerProducts'); ?></p>
-            </div> -->
     </div>
 </div>
 
 <div class="container-fluid pt-5">
     <div class="container">
         <div class="text-center mb-5">
-            <!-- <h1 class="text-primary text-uppercase" style="letter-spacing: 5px;"><?php echo lang('Blog.btnOurproducts'); ?></h1> -->
+            <h1 class="text-primary text-uppercase"><?php echo lang('Blog.btnOurclient'); ?></h1>
         </div>
         <div class="row justify-content-center">
             <?php foreach ($tbaktivitas as $aktivitas) : ?>
-                <div class="col-lg-6 mb-5">
-                    <div class="article-card row align-items-center">
-                        <div class="col-lg-5 col-md-7">
-                            <a href="<?= base_url('activities/detail/' . $aktivitas->id_aktivitas . '/' . url_title($aktivitas->nama_aktivitas_en) . '_' . url_title($aktivitas->nama_aktivitas_in)) ?>" class="article-card-link">
-                                <img data-src="asset-user/images/<?= $aktivitas->foto_aktivitas ?>" alt="<?php if (lang('Blog.Languange') == 'en') {
-                                                                                                                echo $aktivitas->nama_aktivitas_en;
-                                                                                                            } ?>
-                                    <?php if (lang('Blog.Languange') == 'in') {
-                                        echo $aktivitas->nama_aktivitas_in;
-                                    } ?>" class="img-fluid img-larger lazyload">
-                            </a>
-                        </div>
-                        <div class="col-sm-7">
-                            <h4>
-                                <i class="fas fa-car service-icon"></i>
-                                <a href="<?= base_url('activities/detail/' . $aktivitas->id_aktivitas . '/' . url_title($aktivitas->nama_aktivitas_en) . '_' . url_title($aktivitas->nama_aktivitas_in)) ?>" class="article-card-link">
+                <div class="col-lg-6 col-md-6 col-sm-12 mb-4 px-4">
+                    <a href="<?= base_url('activities/detail/' . $aktivitas->id_aktivitas . '/' . url_title($aktivitas->nama_aktivitas_en) . '_' . url_title($aktivitas->nama_aktivitas_in)) ?>" class="article-card-link" style="text-decoration: none;">
+                        <div class="article-card row align-items-center" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                            <div class="col-sm-5" style="padding: 15px;">
+                                <img class="img-fluid mb-3 mb-sm-0 lazyload" style="border-radius: 10px;" data-src="asset-user/images/<?= $aktivitas->foto_aktivitas; ?>" alt="<?php if (lang('Blog.Languange') == 'en') {
+                                                                                                                                                                                    echo $aktivitas->nama_aktivitas_en;
+                                                                                                                                                                                } ?>
+                                <?php if (lang('Blog.Languange') == 'in') {
+                                    echo $aktivitas->nama_aktivitas_in;
+                                } ?>" class="img-fluid lazyload">
+                            </div>
+                            <div class="col-sm-7">
+                                <h3 class="h3-link">
                                     <?php if (lang('Blog.Languange') == 'en') {
                                         echo $aktivitas->nama_aktivitas_en;
                                     } ?>
                                     <?php if (lang('Blog.Languange') == 'in') {
                                         echo $aktivitas->nama_aktivitas_in;
                                     } ?>
-                                </a>
-                            </h4>
-                            <p class="opacity-50 justify-text">
-                                <?php
-                                $lang = lang('Blog.Languange');
-                                $deskripsi_aktivitas = ($lang == 'en') ? $aktivitas->deskripsi_aktivitas_en : $aktivitas->deskripsi_aktivitas_in;
+                                </h3>
+                                <p style="color: #555;">
+                                    <?php
+                                    $lang = lang('Blog.Languange');
+                                    $deskripsi_aktivitas = ($lang == 'en') ? $aktivitas->deskripsi_aktivitas_en : $aktivitas->deskripsi_aktivitas_in;
 
-                                // Mengambil 10 kata pertama dari deskripsi aktivitas
-                                $deskripsi_aktivitas_10_kata = implode(' ', array_slice(str_word_count($deskripsi_aktivitas, 1), 0, 10));
+                                    // Memotong deskripsi menjadi 10 kata pertama
+                                    $deskripsi_aktivitas_bersih = strip_tags($deskripsi_aktivitas);
+                                    $deskripsi_aktivitas_10_kata = implode(' ', array_slice(str_word_count($deskripsi_aktivitas_bersih, 1), 0, 10));
 
-                                echo $deskripsi_aktivitas_10_kata . '...';
-                                ?>
-                                <a href="<?= base_url('activities/detail/' . $aktivitas->id_aktivitas . '/' . url_title($aktivitas->nama_aktivitas_en) . '_' . url_title($aktivitas->nama_aktivitas_in)) ?>" class="read-more-link">
-                                    <p class="read-more-btn"><?= lang('Blog.btnReadmore'); ?></p>
-                                </a>
-                            </p>
+                                    echo $deskripsi_aktivitas_10_kata . '...';
+                                    ?>
+                                </p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -77,12 +67,11 @@
 <style>
     .intro-section h1 {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        /* Adjust the shadow parameters as needed */
     }
 
     .article-card {
         transition: transform 0.3s, box-shadow 0.3s;
-        cursor: pointer;
+        background-color: #E1EFE6;
     }
 
     .article-card:hover {
@@ -109,6 +98,5 @@
         text-decoration: underline;
     }
 </style>
-
 
 <?= $this->endSection('content'); ?>

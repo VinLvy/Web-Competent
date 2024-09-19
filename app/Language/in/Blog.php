@@ -13,6 +13,7 @@ return [
     'btnReadmore' => 'Baca Selengkapnya',
     'btnOurtraining' => 'Materi Pelatihan Kami',
     'btnOurblogs' => 'Blog Kami',
+    'btnOurclient' => 'Klien Kami',
     'btnSeeMoreBlogs' => 'Blog Lainnya',
     'btnMoreTraining' => 'Materi Pelatihan Lainnya',
     'titleOurTraining' => 'Materi Pelatihan dari',
