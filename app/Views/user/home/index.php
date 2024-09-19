@@ -125,7 +125,7 @@
 <!-- News With Sidebar Start -->
 <div class="container-fluid pt-5 mb-3">
     <div class="container">
-    <div class="text-center mb-5">
+        <div class="text-center mb-5">
             <h1 class="text-primary text-uppercase" style=""><?php echo lang('Blog.btnOurblogs'); ?></h1>
         </div>
         <div class="row">
@@ -148,22 +148,23 @@
                 <!-- Menampilkan artikel lainnya -->
                 <div class="mb-3">
                     <div class="row">
-                        <!-- <div class="mb-5">
-                            <img src="<?= base_url('asset-user/images/news.png') ?>" alt="Logo" style="width: 50px; height: auto; text-align: left;">
-                        </div> -->
+                        <div class="mb-3">
+                            <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary title-alsoread" style="text-align: left;"><?php echo lang('Blog.titleAlsoread'); ?></h5>
+                        </div>
                         <div class="bg-white border border-top-0 p-3">
                             <?php foreach (array_slice($artikelterbaru, 1) as $artikel_item) : ?>
-                                <div class="d-flex align-items-center bg-white mb-3 article-item">
-                                    <a href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>">
-                                        <img class="img-fluid article-image" src="<?= base_url('asset-user/images/' . $artikel_item->foto_artikel); ?>" loading="lazy">
-                                    </a>
-                                    <div class="w-100 h-100 d-flex flex-column justify-content-center border border-left-0 article-content">
-                                        <div class="mb-2">
-                                            <a class="text-body" href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>"><small><?= date('d F Y', strtotime($artikel_item->created_at)); ?></small></a>
+                                <!-- Membuat seluruh card artikel dapat diklik -->
+                                <a href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>" class="article-card-link" style="text-decoration: none;">
+                                    <div class="d-flex align-items-center bg-white mb-3 article-item">
+                                        <img class="img-fluid article-image" src="<?= base_url('asset-user/images/' . $artikel_item->foto_artikel); ?>" loading="lazy" alt="<?= $artikel_item->judul_artikel ?>">
+                                        <div class="w-100 h-100 d-flex flex-column justify-content-center article-content">
+                                            <!-- <div class="mb-2">
+                                                <small class="text-body"><?= date('d F Y', strtotime($artikel_item->created_at)); ?></small>
+                                            </div> -->
+                                            <h6 class="m-0 display-7" ><?= $artikel_item->judul_artikel ?></h6>
                                         </div>
-                                        <a class="h6 m-0 display-7" href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>"><?= substr($artikel_item->judul_artikel, 0, 20) ?>...</a>
                                     </div>
-                                </div>
+                                </a>
                             <?php endforeach; ?>
                         </div>
                     </div>
@@ -216,6 +217,63 @@
         padding-right: 30px;
         border-radius: 25px;
     }
+
+    .article-item {
+        display: flex;
+        height: 110px;
+        overflow: hidden;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .article-item:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .article-image {
+        width: 110px;
+        height: 110px;
+        object-fit: cover;
+        border-radius: 5px 0 0 5px;
+    }
+
+    .article-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 1rem;
+        white-space: normal;
+        overflow: hidden;
+    }
+
+    .article-content a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .article-title {
+        
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .article-content small {
+        color: #888;
+    }
+
+    /* Memastikan seluruh card bisa diklik */
+    .article-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        width: 100%;
+    }
+
+    .article-link:hover {
+        text-decoration: none; /* Pastikan tidak ada garis bawah saat hover */
+    }
+
 </style>
 
 <?= $this->endSection('content'); ?>
