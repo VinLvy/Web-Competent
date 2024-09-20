@@ -9,7 +9,14 @@ class ArtikelModel extends Model
     protected $table = "tb_artikel";
     protected $primaryKey = "id_artikel";
     protected $returnType = "object";
-    protected $allowedFields = ['id_artikel', 'judul_artikel', 'foto_artikel', 'deskripsi_artikel'];
+    protected $allowedFields = [
+        'id_artikel', 
+        'judul_artikel', 
+        'judul_artikel_en', 
+        'foto_artikel', 
+        'deskripsi_artikel', 
+        'deskripsi_artikel_en'
+    ];
 
     public function getArtikelTerbaru()
     {

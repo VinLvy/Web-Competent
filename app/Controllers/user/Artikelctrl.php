@@ -30,11 +30,11 @@ class Artikelctrl extends BaseController
 
         helper('text');
 
-        // Set meta description based on session language
+        // Set meta description berdasarkan bahasa session
         $metaDescription = $this->generateMetaDescription($data);
         $data['Meta'] = character_limiter($metaDescription, 150);
 
-        // Set default title
+        // Set judul halaman default
         $data['Title'] = lang('Blog.headerBlogs');
 
         return view('user/artikel/index', $data);
@@ -48,20 +48,26 @@ class Artikelctrl extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException("Artikel dengan ID $id_artikel tidak ditemukan");
         }
 
+        // Memilih judul dan deskripsi berdasarkan session bahasa
+        $judul_artikel = session('lang') === 'in' ? $artikel->judul_artikel : $artikel->judul_artikel_en;
+        $deskripsi_artikel = session('lang') === 'in' ? $artikel->deskripsi_artikel : $artikel->deskripsi_artikel_en;
+
         $data = [
             'profil' => $this->ProfilModel->findAll(),
             'artikel' => $artikel,
             'artikel_lain' => $this->ArtikelModel->getArtikelLainnya($id_artikel, 4),
+            'judul_artikel' => $judul_artikel,
+            'deskripsi_artikel' => $deskripsi_artikel,
         ];
 
         helper('text');
 
-        // Set meta description based on session language
+        // Set meta description berdasarkan bahasa session
         $metaDescription = $this->generateMetaDescription($data);
         $data['Meta'] = character_limiter($metaDescription, 150);
 
-        // Set default title
-        $data['Title'] = isset($artikel->judul_artikel) ? $artikel->judul_artikel : 'Detail Artikel';
+        // Set judul halaman sesuai judul artikel yang sesuai dengan bahasa
+        $data['Title'] = $judul_artikel ?: 'Detail Artikel';
 
         return view('user/artikel/detail', $data);
     }
@@ -75,7 +81,7 @@ class Artikelctrl extends BaseController
 
         $teks = session('lang') === 'in' ?
             "Artikel dari $nama_perusahaan. $deskripsi_perusahaan" :
-            "Articles of $nama_perusahaan. $deskripsi_perusahaan";
+            "Articles from $nama_perusahaan. $deskripsi_perusahaan";
 
         return $teks;
     }

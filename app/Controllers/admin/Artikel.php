@@ -46,7 +46,22 @@ class Artikel extends BaseController
             return redirect()->to(base_url('login')); // Sesuaikan dengan halaman login Anda
         }
 
-        // Proses validasi input di sini
+        $judul_artikel = $this->request->getVar('judul_artikel');
+        $judul_artikel_en = $this->request->getVar('judul_artikel_en');
+        $deskripsi_artikel = $this->request->getVar('deskripsi_artikel');
+        $deskripsi_artikel_en = $this->request->getVar('deskripsi_artikel_en');
+
+        // Validasi judul artikel dalam bahasa Indonesia
+        if (!preg_match('/^[a-zA-Z0-9\s]+$/', $judul_artikel)) {
+            session()->setFlashdata('error', 'Judul artikel dalam bahasa Indonesia hanya boleh berisi huruf dan angka.');
+            return redirect()->back()->withInput();
+        }
+
+        // Validasi judul artikel dalam bahasa Inggris
+        if (!preg_match('/^[a-zA-Z0-9\s]+$/', $judul_artikel_en)) {
+            session()->setFlashdata('error', 'Judul artikel dalam bahasa Inggris hanya boleh berisi huruf dan angka.');
+            return redirect()->back()->withInput();
+        }
 
         // Validasi foto artikel
         if (!$this->validate([
@@ -66,19 +81,16 @@ class Artikel extends BaseController
             // Simpan artikel ke dalam database
             $file_foto = $this->request->getFile('foto_artikel');
             $currentDateTime = date('dmYHis');
-            $judul_artikel = $this->request->getVar('judul_artikel');
 
-            // Format nama file foto seperti dua controller lainnya
-            $newFileName = "{$judul_artikel}_{$currentDateTime}.{$file_foto->getExtension()}";
-
-            // Ganti spasi dengan tanda -
-            $newFileName = str_replace(' ', '-', $newFileName);
-
+            // Format nama file foto
+            $newFileName = str_replace(' ', '-', "{$judul_artikel}_{$currentDateTime}.{$file_foto->getExtension()}");
             $file_foto->move('asset-user/images', $newFileName);
 
             $data = [
-                'judul_artikel' => $this->request->getPost('judul_artikel'),
-                'deskripsi_artikel' => $this->request->getPost('deskripsi_artikel'),
+                'judul_artikel' => $judul_artikel,
+                'judul_artikel_en' => $judul_artikel_en,
+                'deskripsi_artikel' => $deskripsi_artikel,
+                'deskripsi_artikel_en' => $deskripsi_artikel_en,
                 'foto_artikel' => $newFileName
             ];
 
@@ -95,8 +107,7 @@ class Artikel extends BaseController
             return redirect()->to(base_url('login')); // Sesuaikan dengan halaman login Anda
         }
 
-        $artikel_model = new ArtikelModel();
-        $artikelData = $artikel_model->find($id_artikel);
+        $artikelData = $this->artikelModel->find($id_artikel);
         $validation = \Config\Services::validation();
 
         return view('admin/artikel/edit', [
@@ -112,12 +123,27 @@ class Artikel extends BaseController
             return redirect()->to(base_url('login')); // Sesuaikan dengan halaman login Anda
         }
 
-        // Pengecekan apakah ID artikel valid
         if (!$id_artikel) {
             return redirect()->back();
         }
 
-        // Validasi input
+        $judul_artikel = $this->request->getVar("judul_artikel");
+        $judul_artikel_en = $this->request->getVar("judul_artikel_en");
+        $deskripsi_artikel = $this->request->getVar("deskripsi_artikel");
+        $deskripsi_artikel_en = $this->request->getVar("deskripsi_artikel_en");
+
+        // Validasi judul artikel dalam bahasa Indonesia
+        if (!preg_match('/^[a-zA-Z0-9\s]+$/', $judul_artikel)) {
+            session()->setFlashdata('error', 'Judul artikel dalam bahasa Indonesia hanya boleh berisi huruf dan angka.');
+            return redirect()->back()->withInput();
+        }
+
+        // Validasi judul artikel dalam bahasa Inggris
+        if (!preg_match('/^[a-zA-Z0-9\s]+$/', $judul_artikel_en)) {
+            session()->setFlashdata('error', 'Judul artikel dalam bahasa Inggris hanya boleh berisi huruf dan angka.');
+            return redirect()->back()->withInput();
+        }
+
         $file_foto = $this->request->getFile('foto_artikel');
 
         // Jika file foto di-upload
@@ -129,29 +155,23 @@ class Artikel extends BaseController
                 unlink($oldFilePath);
             }
 
-            // Format nama file foto seperti dua controller lainnya
-            $judul_artikel = $this->request->getVar('judul_artikel');
-            $currentDateTime = date('dmYHis');
-            $newFileName = "{$judul_artikel}_{$currentDateTime}.{$file_foto->getExtension()}";
-
-            // Ganti spasi dengan tanda -
-            $newFileName = str_replace(' ', '-', $newFileName);
-
+            // Simpan foto baru
+            $newFileName = $file_foto->getRandomName();
             $file_foto->move('asset-user/images', $newFileName);
         } else {
-            // Jika tidak ada file foto baru, gunakan foto lama
             $artikelData = $this->artikelModel->find($id_artikel);
             $newFileName = $artikelData->foto_artikel;
         }
 
         // Update data artikel
         $data = [
-            'judul_artikel' => $this->request->getPost('judul_artikel'),
-            'deskripsi_artikel' => $this->request->getPost('deskripsi_artikel'),
+            'judul_artikel' => $judul_artikel,
+            'judul_artikel_en' => $judul_artikel_en,
+            'deskripsi_artikel' => $deskripsi_artikel,
+            'deskripsi_artikel_en' => $deskripsi_artikel_en,
             'foto_artikel' => $newFileName
         ];
 
-        // Update data artikel dalam database
         $this->artikelModel->update($id_artikel, $data);
 
         return redirect()->to(base_url('admin/artikel/index'));
@@ -164,12 +184,9 @@ class Artikel extends BaseController
             return redirect()->to(base_url('login')); // Sesuaikan dengan halaman login Anda
         }
 
-        $artikelModel = new ArtikelModel();
-        $data = $artikelModel->find($id);
-
+        $data = $this->artikelModel->find($id);
         unlink('asset-user/images/' . $data->foto_artikel);
-
-        $artikelModel->delete($id);
+        $this->artikelModel->delete($id);
 
         return redirect()->to(base_url('admin/artikel/index'));
     }
