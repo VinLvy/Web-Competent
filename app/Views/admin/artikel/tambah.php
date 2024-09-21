@@ -20,14 +20,31 @@
                         <?= csrf_field(); ?>
                         <div class="row">
                             <div class="col">
+                                <!-- Input untuk Judul Artikel dalam Bahasa Indonesia -->
                                 <div class="mb-3">
-                                    <label class="form-label">Judul Artikel</label>
+                                    <label class="form-label">Judul Artikel (In) <br><span class="custom-color custom-label">judul artikel hanya boleh mengandung huruf dan angka</span></label>
                                     <input type="text" class="form-control" id="judul_artikel" name="judul_artikel" value="<?= old('judul_artikel') ?>">
                                 </div>
+
+                                <!-- Input untuk Judul Artikel dalam Bahasa Inggris -->
                                 <div class="mb-3">
-                                    <label class="form-label">Deskripsi Artikel</label>
+                                    <label class="form-label">Judul Artikel (En) <br><span class="custom-color custom-label">judul artikel hanya boleh mengandung huruf dan angka</span></label>
+                                    <input type="text" class="form-control" id="judul_artikel_en" name="judul_artikel_en" value="<?= old('judul_artikel_en') ?>">
+                                </div>
+
+                                <!-- Input untuk Deskripsi Artikel dalam Bahasa Indonesia -->
+                                <div class="mb-3">
+                                    <label class="form-label">Deskripsi Artikel (In)</label>
                                     <textarea type="text" class="form-control tiny" id="deskripsi_artikel" name="deskripsi_artikel"><?= old('deskripsi_artikel') ?></textarea>
                                 </div>
+
+                                <!-- Input untuk Deskripsi Artikel dalam Bahasa Inggris -->
+                                <div class="mb-3">
+                                    <label class="form-label">Deskripsi Artikel (En)</label>
+                                    <textarea type="text" class="form-control tiny" id="deskripsi_artikel_en" name="deskripsi_artikel_en"><?= old('deskripsi_artikel_en') ?></textarea>
+                                </div>
+
+                                <!-- Input untuk Foto Artikel -->
                                 <div class="mb-3">
                                     <label class="form-label">Gambar Artikel</label>
                                     <input class="form-control <?= ($validation && $validation->hasError('foto_artikel')) ? 'is-invalid' : '' ?>" type="file" id="foto_artikel" name="foto_artikel">
@@ -41,6 +58,7 @@
                                 <p>*Format gambar harus berekstensi jpg/png/jpeg</p>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col">
                                 <button type="submit" class="btn btn-primary">Simpan</button>

@@ -27,14 +27,33 @@
         <br>
         <br>
         <div class="row justify-content-center">
-            <?php foreach ($artikelterbaru as $row) : ?>
+            <?php
+            $language = session()->get('lang'); // Ambil bahasa yang sedang dipilih dari session
+
+            foreach ($artikelterbaru as $row) : ?>
                 <div class="col-lg-4 mb-4">
                     <a href="<?= base_url('/artikel/detail/' . $row->id_artikel) ?>" class="article-card-link">
                         <div class="article-card d-flex flex-column h-100 mb-3">
                             <img class="img-fluid w-100" style="object-fit: cover; border-radius: 15px 15px 0 0;" src="<?= base_url('asset-user') ?>/images/<?= $row->foto_artikel; ?>" loading="lazy">
                             <div class="bg-white border border-top-0 p-4 flex-grow-1" style="border-radius: 0 0 15px 15px;">
-                                <h6 class="h4 display-5 " ><?= $row->judul_artikel ?></h6>
-                                <p><?= substr(strip_tags($row->deskripsi_artikel), 0, 30) ?>...</p>
+                                <h6 class="h4 display-5">
+                                    <?php
+                                    if ($language == 'en') {
+                                        echo $row->judul_artikel_en;
+                                    } else {
+                                        echo $row->judul_artikel;
+                                    }
+                                    ?>
+                                </h6>
+                                <p>
+                                    <?php
+                                    if ($language == 'en') {
+                                        echo substr(strip_tags($row->deskripsi_artikel_en), 0, 30);
+                                    } else {
+                                        echo substr(strip_tags($row->deskripsi_artikel), 0, 30);
+                                    }
+                                    ?>...
+                                </p>
                             </div>
                         </div>
                     </a>
@@ -45,77 +64,74 @@
 </div>
 <!-- News With Sidebar End -->
 
-
 <style>
     .intro-section h1 {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-.article-card {
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-radius: 15px;
-    overflow: hidden; /* Ensure that content does not overflow the rounded corners */
-    text-decoration: none;
-}
+    .article-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-radius: 15px;
+        overflow: hidden;
+        text-decoration: none;
+    }
 
-.article-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-}
+    .article-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+    }
 
-.article-card-link:hover {
-    text-decoration: none;
-}
+    .article-card-link:hover {
+        text-decoration: none;
+    }
 
-.article-card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
+    .article-card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
 
-.article-card img {
-    border-radius: 15px 15px 0 0;
-}
+    .article-card img {
+        border-radius: 15px 15px 0 0;
+    }
 
-.article-card .bg-white {
-    border-radius: 0 0 15px 15px;
-    height: 100%; /* Ensure that the card content stretches to the full height of the card */
-}
+    .article-card .bg-white {
+        border-radius: 0 0 15px 15px;
+        height: 100%;
+    }
 
-.article-card h6 {
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem; /* Adjust as needed */
-    font-weight: bold;
-    text-decoration: none; /* Remove underline from the title */
-    color: inherit; /* Ensure color is inherited */
-}
+    .article-card h6 {
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: inherit;
+    }
 
-.article-card p {
-    margin: 0; /* Remove default margin */
-    color: #333; /* Set a default color for the text */
-}
+    .article-card p {
+        margin: 0;
+        color: #333;
+    }
 
-/* Ensure all cards have the same height */
-.row > .col-lg-4 {
-    display: flex;
-    align-items: stretch;
-}
+    .row>.col-lg-4 {
+        display: flex;
+        align-items: stretch;
+    }
 
-.article-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Ensure cards are full height */
-}
+    .article-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
 
-.article-card img {
-    flex-shrink: 0; /* Prevent the image from shrinking */
-}
+    .article-card img {
+        flex-shrink: 0;
+    }
 
-.article-card .bg-white {
-    flex-grow: 1; /* Allow content to grow to fill available space */
-}
-
+    .article-card .bg-white {
+        flex-grow: 1;
+    }
 </style>
 
 <?= $this->endSection('content'); ?>

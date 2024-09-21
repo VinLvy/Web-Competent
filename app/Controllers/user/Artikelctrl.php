@@ -48,9 +48,12 @@ class Artikelctrl extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException("Artikel dengan ID $id_artikel tidak ditemukan");
         }
 
+        // Tentukan bahasa (dengan fallback jika tidak ada session)
+        $language = session('lang') ?? 'in';
+
         // Memilih judul dan deskripsi berdasarkan session bahasa
-        $judul_artikel = session('lang') === 'in' ? $artikel->judul_artikel : $artikel->judul_artikel_en;
-        $deskripsi_artikel = session('lang') === 'in' ? $artikel->deskripsi_artikel : $artikel->deskripsi_artikel_en;
+        $judul_artikel = $language === 'in' ? $artikel->judul_artikel : $artikel->judul_artikel_en;
+        $deskripsi_artikel = $language === 'in' ? $artikel->deskripsi_artikel : $artikel->deskripsi_artikel_en;
 
         $data = [
             'profil' => $this->ProfilModel->findAll(),
@@ -58,6 +61,7 @@ class Artikelctrl extends BaseController
             'artikel_lain' => $this->ArtikelModel->getArtikelLainnya($id_artikel, 4),
             'judul_artikel' => $judul_artikel,
             'deskripsi_artikel' => $deskripsi_artikel,
+            'language' => $language, // Kirim variabel bahasa ke view
         ];
 
         helper('text');

@@ -37,7 +37,6 @@
     }
 
     .article-title {
-        
         font-weight: bold;
         margin: 0;
     }
@@ -57,8 +56,6 @@
     .article-link:hover {
         text-decoration: none; /* Pastikan tidak ada garis bawah saat hover */
     }
-
-    
 </style>
 
 <div class="container-fluid page-header py-5" style="background-image: url('<?= base_url('./asset-user/images/hero_1.jpg'); ?>');">
@@ -76,8 +73,23 @@
                         <div class="mb-3">
                             <a class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikel->created_at)); ?></a>
                         </div>
-                        <h1 class="display-5 mb-2 article-title"><?= $artikel->judul_artikel; ?></h1>
-                        <p class="fs-5"><?= $artikel->deskripsi_artikel; ?></p>
+                        
+                        <!-- Tambahkan logika pemilihan bahasa -->
+                        <h1 class="display-5 mb-2 article-title">
+                            <?php if ($language == 'en') : ?>
+                                <?= $artikel->judul_artikel_en; ?>
+                            <?php else : ?>
+                                <?= $artikel->judul_artikel; ?>
+                            <?php endif; ?>
+                        </h1>
+                        
+                        <p class="fs-5">
+                            <?php if ($language == 'en') : ?>
+                                <?= $artikel->deskripsi_artikel_en; ?>
+                            <?php else : ?>
+                                <?= $artikel->deskripsi_artikel; ?>
+                            <?php endif; ?>
+                        </p>
                     </div>
                 </div>
                 <!-- News Detail End -->
@@ -88,7 +100,9 @@
                 <div class="mb-3">
                     <div class="row">
                         <div class="mb-3">
-                            <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary title-alsoread" style="text-align: left;"><?php echo lang('Blog.titleAlsoread'); ?></h5>
+                            <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary title-alsoread" style="text-align: left;">
+                                <?php echo lang('Blog.titleAlsoread'); ?>
+                            </h5>
                         </div>
                         <div class="bg-white border border-top-0 p-3">
                             <?php foreach ($artikel_lain as $artikel_item) : ?>
@@ -96,7 +110,13 @@
                                     <div class="d-flex align-items-center bg-white mb-3 article-item">
                                         <img class="img-fluid article-image" src="<?= base_url('asset-user/images/' . $artikel_item->foto_artikel); ?>" loading="lazy">
                                         <div class="w-100 h-100 d-flex flex-column justify-content-center article-content">
-                                            <h6 class="article-title"><?= $artikel_item->judul_artikel ?></h6>
+                                            <h6 class="article-title">
+                                                <?php if ($language == 'en') : ?>
+                                                    <?= $artikel_item->judul_artikel_en; ?>
+                                                <?php else : ?>
+                                                    <?= $artikel_item->judul_artikel; ?>
+                                                <?php endif; ?>
+                                            </h6>
                                         </div>
                                     </div>
                                 </a>

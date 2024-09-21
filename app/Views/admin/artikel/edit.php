@@ -20,14 +20,32 @@
                             <div class="col">
                                 <?php if (isset($artikelData)) : ?>
                                     <input type="text" class="form-control" id="id_artikel" name="id_artikel" value="<?= $artikelData->id_artikel ?>" hidden>
+                                    
+                                    <!-- Input Judul Artikel Indonesia -->
                                     <div class="mb-3">
-                                        <label class="form-label">Judul Artikel</label>
+                                        <label class="form-label">Judul Artikel (In)</label>
                                         <input type="text" class="form-control" id="judul_artikel" name="judul_artikel" value="<?= $artikelData->judul_artikel; ?>">
                                     </div>
+
+                                    <!-- Input Judul Artikel Inggris -->
                                     <div class="mb-3">
-                                        <label class="form-label">Deskripsi Artikel</label>
+                                        <label class="form-label">Judul Artikel (En)</label>
+                                        <input type="text" class="form-control" id="judul_artikel_en" name="judul_artikel_en" value="<?= $artikelData->judul_artikel_en; ?>">
+                                    </div>
+
+                                    <!-- Input Deskripsi Artikel Indonesia -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Deskripsi Artikel (In)</label>
                                         <textarea type="text" class="form-control tiny" id="deskripsi_artikel" name="deskripsi_artikel"><?= $artikelData->deskripsi_artikel; ?></textarea>
                                     </div>
+
+                                    <!-- Input Deskripsi Artikel Inggris -->
+                                    <div class="mb-3">
+                                        <label class="form-label">Deskripsi Artikel (En)</label>
+                                        <textarea type="text" class="form-control tiny" id="deskripsi_artikel_en" name="deskripsi_artikel_en"><?= $artikelData->deskripsi_artikel_en; ?></textarea>
+                                    </div>
+
+                                    <!-- Input untuk Foto Artikel -->
                                     <div class="mb-3">
                                         <label class="form-label">Gambar Artikel</label>
                                         <input type="file" class="form-control" id="foto_artikel" name="foto_artikel">
