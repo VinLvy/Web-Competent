@@ -54,7 +54,8 @@
     }
 
     .article-link:hover {
-        text-decoration: none; /* Pastikan tidak ada garis bawah saat hover */
+        text-decoration: none;
+        /* Pastikan tidak ada garis bawah saat hover */
     }
 </style>
 
@@ -73,7 +74,7 @@
                         <div class="mb-3">
                             <a class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikel->created_at)); ?></a>
                         </div>
-                        
+
                         <!-- Tambahkan logika pemilihan bahasa -->
                         <h1 class="display-5 mb-2 article-title">
                             <?php if ($language == 'en') : ?>
@@ -82,7 +83,7 @@
                                 <?= $artikel->judul_artikel; ?>
                             <?php endif; ?>
                         </h1>
-                        
+
                         <p class="fs-5">
                             <?php if ($language == 'en') : ?>
                                 <?= $artikel->deskripsi_artikel_en; ?>

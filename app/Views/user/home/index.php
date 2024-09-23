@@ -125,7 +125,7 @@
 <div class="container-fluid pt-5 mb-3">
     <div class="container">
         <div class="text-center mb-5">
-            <h1 class="text-primary text-uppercase" style=""><?php echo lang('Blog.btnOurblogs'); ?></h1>
+            <h1 class="text-primary text-uppercase"><?php echo lang('Blog.btnOurblogs'); ?></h1>
         </div>
         <div class="row">
             <div class="col-lg-8">
@@ -136,8 +136,16 @@
                         <div class="mb-3">
                             <a class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikelterbaru[0]->created_at)); ?></a>
                         </div>
-                        <h1 class="display-5 mb-2 article-title"><?= $artikelterbaru[0]->judul_artikel; ?></h1>
-                        <p class="fs-5"><?= $artikelterbaru[0]->deskripsi_artikel; ?></p>
+
+                        <!-- Menampilkan judul artikel terbaru berdasarkan bahasa -->
+                        <h1 class="display-5 mb-2 article-title">
+                            <?= session('lang') === 'en' ? $artikelterbaru[0]->judul_artikel_en : $artikelterbaru[0]->judul_artikel; ?>
+                        </h1>
+
+                        <!-- Menampilkan deskripsi artikel terbaru berdasarkan bahasa -->
+                        <p class="fs-5">
+                            <?= session('lang') === 'en' ? $artikelterbaru[0]->deskripsi_artikel_en : $artikelterbaru[0]->deskripsi_artikel; ?>
+                        </p>
                     </div>
                 </div>
                 <!-- End Artikel Terbaru -->
@@ -146,26 +154,26 @@
             <div class="col-lg-4">
                 <!-- Menampilkan artikel lainnya -->
                 <div class="mb-3">
-                    <div class="row">
-                        <div class="mb-3">
-                            <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary title-alsoread" style="text-align: left;"><?php echo lang('Blog.titleAlsoread'); ?></h5>
-                        </div>
-                        <div class="bg-white border border-top-0 p-3">
-                            <?php foreach (array_slice($artikelterbaru, 1) as $artikel_item) : ?>
-                                <!-- Membuat seluruh card artikel dapat diklik -->
-                                <a href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>" class="article-card-link" style="text-decoration: none;">
-                                    <div class="d-flex align-items-center bg-white mb-3 article-item">
-                                        <img class="img-fluid article-image" src="<?= base_url('asset-user/images/' . $artikel_item->foto_artikel); ?>" loading="lazy" alt="<?= $artikel_item->judul_artikel ?>">
-                                        <div class="w-100 h-100 d-flex flex-column justify-content-center article-content">
-                                            <!-- <div class="mb-2">
-                                                <small class="text-body"><?= date('d F Y', strtotime($artikel_item->created_at)); ?></small>
-                                            </div> -->
-                                            <h6 class="m-0 display-7" ><?= $artikel_item->judul_artikel ?></h6>
-                                        </div>
+                    <div class="mb-3">
+                        <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary title-alsoread" style="text-align: left;">
+                            <?php echo lang('Blog.titleAlsoread'); ?>
+                        </h5>
+                    </div>
+                    <div class="bg-white border border-top-0 p-3">
+                        <?php foreach (array_slice($artikelterbaru, 1) as $artikel_item) : ?>
+                            <!-- Membuat seluruh card artikel dapat diklik -->
+                            <a href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>" class="article-card-link" style="text-decoration: none;">
+                                <div class="d-flex align-items-center bg-white mb-3 article-item">
+                                    <img class="img-fluid article-image" src="<?= base_url('asset-user/images/' . $artikel_item->foto_artikel); ?>" loading="lazy" alt="<?= $artikel_item->judul_artikel ?>">
+                                    <div class="w-100 h-100 d-flex flex-column justify-content-center article-content">
+                                        <!-- Menampilkan judul artikel lainnya berdasarkan bahasa -->
+                                        <h6 class="m-0 display-7">
+                                            <?= session('lang') === 'en' ? $artikel_item->judul_artikel_en : $artikel_item->judul_artikel; ?>
+                                        </h6>
                                     </div>
-                                </a>
-                            <?php endforeach; ?>
-                        </div>
+                                </div>
+                            </a>
+                        <?php endforeach; ?>
                     </div>
                 </div>
                 <!-- End Artikel Lainnya -->
@@ -173,8 +181,8 @@
         </div>
     </div>
 </div>
-
 <!-- End News With Sidebar -->
+
 
 <style>
     .intro-section h1 {
@@ -252,7 +260,7 @@
     }
 
     .article-title {
-        
+
         font-weight: bold;
         margin: 0;
     }
@@ -270,9 +278,9 @@
     }
 
     .article-link:hover {
-        text-decoration: none; /* Pastikan tidak ada garis bawah saat hover */
+        text-decoration: none;
+        /* Pastikan tidak ada garis bawah saat hover */
     }
-
 </style>
 
 <?= $this->endSection('content'); ?>
