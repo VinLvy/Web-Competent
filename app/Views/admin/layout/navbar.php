@@ -70,10 +70,9 @@
                         <span class="nav-link-text">Klien</span>
                     </a><!--//nav-link-->
                 </li><!--//nav-item-->
-                
+
                 <li class="nav-item">
-                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                    <a class="nav-link" href="<?= base_url('admin/artikel/index') ?>">
+                    <a class="nav-link <?= (current_url() == base_url('admin/artikel/index') ? 'active' : '') ?>" href="<?= base_url('admin/artikel/index') ?>">
                         <span class="nav-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
                                 <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-4L6 4H4zm2 1h4a1 1 0 0 1 1 1v1H5V2a1 1 0 0 1 1-1z" />
@@ -81,8 +80,8 @@
                             </svg>
                         </span>
                         <span class="nav-link-text">Blog</span>
-                    </a><!--//nav-link-->
-                </li><!--//nav-item-->
+                    </a>
+                </li>
 
 
             </ul><!--//app-menu-->
