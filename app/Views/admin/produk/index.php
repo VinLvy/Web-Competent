@@ -6,11 +6,11 @@
     <div class="container-xl">
         <div class="row g-3 mb-4 align-items-center justify-content-between">
             <div class="col-auto">
-                <h1 class="app-page-title mb-0">Daftar Produk</h1>
+                <h1 class="app-page-title mb-0">Daftar Materi</h1>
             </div>
             </br>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a href="<?php echo base_url() . "admin/produk/tambah" ?>" class="btn btn-primary me-md-2"> + Tambah Produk</a>
+                <a href="<?php echo base_url() . "admin/produk/tambah" ?>" class="btn btn-primary me-md-2"> + Tambah Materi</a>
             </div>
         </div>
         <div class="tab-content" id="orders-table-tab-content">
@@ -26,11 +26,11 @@
                             <table class="table app-table-hover mb-0 text-left">
                                 <thead>
                                     <tr>
-                                        <th class="text-center" valign="middle">Nama Produk (In)</th>
-                                        <th class="text-center" valign="middle">Nama Produk (En)</th>
-                                        <th class="text-center" valign="middle">Deskripsi Produk (In)</th>
-                                        <th class="text-center" valign="middle">Deskripsi Produk (En)</th>
-                                        <th class="text-center" valign="middle">Foto Produk</th>
+                                        <th class="text-center" valign="middle">Nama Materi (In)</th>
+                                        <th class="text-center" valign="middle">Nama Materi (En)</th>
+                                        <th class="text-center" valign="middle">Deskripsi Materi (In)</th>
+                                        <th class="text-center" valign="middle">Deskripsi Materi (En)</th>
+                                        <th class="text-center" valign="middle">Foto Materi</th>
                                         <th class="text-center" valign="middle">Aksi</th>
                                     </tr>
                                 </thead>

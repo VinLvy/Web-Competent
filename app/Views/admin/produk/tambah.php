@@ -3,7 +3,7 @@
 
 <div class="app-content pt-3 p-md-3 p-lg-4">
     <div class="container-xl">
-        <h1 class="app-page-title">Tambahkan Produk</h1>
+        <h1 class="app-page-title">Tambahkan Materi</h1>
         <hr class="mb-4">
         <div class="row g-4 settings-section">
             <div class="app-card app-card-settings shadow-sm p-4">
@@ -21,23 +21,23 @@
                         <div class="row">
                             <div class="col">
                                 <div class="mb-3">
-                                    <label class="form-label">Nama Produk (In) <br><span class="custom-color custom-label">nama produk hanya boleh mengandung huruf dan angka</span></label>
+                                    <label class="form-label">Nama Materi (In) <br><span class="custom-color custom-label">nama materi hanya boleh mengandung huruf dan angka</span></label>
                                     <input type="text" class="form-control" id="nama_produk_in" name="nama_produk_in" value="<?= old('nama_produk_in') ?>">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Nama Produk (En) <br><span class="custom-color custom-label">nama produk hanya boleh mengandung huruf dan angka</span></label>
+                                    <label class="form-label">Nama Materi (En) <br><span class="custom-color custom-label">nama materi hanya boleh mengandung huruf dan angka</span></label>
                                     <input type="text" class="form-control" id="nama_produk_en" name="nama_produk_en" value="<?= old('nama_produk_en') ?>">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Deskripsi Produk (In)</label>
+                                    <label class="form-label">Deskripsi Materi (In)</label>
                                     <textarea type="text" class="form-control tiny" id="deskripsi_produk_in" name="deskripsi_produk_in"><?= old('deskripsi_produk_in') ?></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Deskripsi Produk (En)</label>
+                                    <label class="form-label">Deskripsi Materi (En)</label>
                                     <textarea type="text" class="form-control tiny" id="deskripsi_produk_en" name="deskripsi_produk_en"><?= old('deskripsi_produk_en') ?></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Foto Produk</label>
+                                    <label class="form-label">Foto Materi</label>
                                     <input class="form-control <?= ($validation->hasError('foto_produk')) ? 'is-invalid' : '' ?>" type="file" id="foto_produk" name="foto_produk">
                                     <?= $validation->getError('foto_produk') ?>
                                 </div>
