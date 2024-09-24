@@ -3,7 +3,7 @@
 
 <div class="app-content pt-3 p-md-3 p-lg-4">
     <div class="container-xl">
-        <h1 class="app-page-title">Edit Artikel</h1>
+        <h1 class="app-page-title">Edit Blog</h1>
         <hr class="mb-4">
         <div class="row g-4 settings-section">
             <div class="app-card app-card-settings shadow-sm p-4">
@@ -23,31 +23,31 @@
                                     
                                     <!-- Input Judul Artikel Indonesia -->
                                     <div class="mb-3">
-                                        <label class="form-label">Judul Artikel (In)</label>
+                                        <label class="form-label">Judul Blog (In)</label>
                                         <input type="text" class="form-control" id="judul_artikel" name="judul_artikel" value="<?= $artikelData->judul_artikel; ?>">
                                     </div>
 
                                     <!-- Input Judul Artikel Inggris -->
                                     <div class="mb-3">
-                                        <label class="form-label">Judul Artikel (En)</label>
+                                        <label class="form-label">Judul Blog (En)</label>
                                         <input type="text" class="form-control" id="judul_artikel_en" name="judul_artikel_en" value="<?= $artikelData->judul_artikel_en; ?>">
                                     </div>
 
                                     <!-- Input Deskripsi Artikel Indonesia -->
                                     <div class="mb-3">
-                                        <label class="form-label">Deskripsi Artikel (In)</label>
+                                        <label class="form-label">Deskripsi Blog (In)</label>
                                         <textarea type="text" class="form-control tiny" id="deskripsi_artikel" name="deskripsi_artikel"><?= $artikelData->deskripsi_artikel; ?></textarea>
                                     </div>
 
                                     <!-- Input Deskripsi Artikel Inggris -->
                                     <div class="mb-3">
-                                        <label class="form-label">Deskripsi Artikel (En)</label>
+                                        <label class="form-label">Deskripsi Blog (En)</label>
                                         <textarea type="text" class="form-control tiny" id="deskripsi_artikel_en" name="deskripsi_artikel_en"><?= $artikelData->deskripsi_artikel_en; ?></textarea>
                                     </div>
 
                                     <!-- Input untuk Foto Artikel -->
                                     <div class="mb-3">
-                                        <label class="form-label">Gambar Artikel</label>
+                                        <label class="form-label">Foto Blog</label>
                                         <input type="file" class="form-control" id="foto_artikel" name="foto_artikel">
                                         <img width="150px" class="img-thumbnail" src="<?= base_url() . "asset-user/images/" . $artikelData->foto_artikel; ?>">
                                         <?php if ($validation ?? false && $validation->hasError('foto_artikel')) : ?>
