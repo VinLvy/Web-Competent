@@ -3,7 +3,7 @@
     <div class="sidepanel-inner d-flex flex-column">
         <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
         <div class="app-branding">
-            <a class="app-logo" href="<?= base_url('admin/dashboard') ?>"><img class="logo-icon me-2" src="<?= base_url('assets/images/app-logo.svg') ?>" alt="logo"><span class="logo-text">CARHAB</span></a>
+            <a class="app-logo" href="<?= base_url('admin/dashboard') ?>"><img class="logo-icon me-2" src="<?= base_url('assets/images/app-logo.svg') ?>" alt="logo"><span class="logo-text">Competent</span></a>
         </div><!--//app-branding-->
 
         <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
@@ -55,7 +55,7 @@
                                 <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
                             </svg>
                         </span>
-                        <span class="nav-link-text">Produk</span>
+                        <span class="nav-link-text">Materi</span>
                     </a><!--//nav-link-->
                 </li><!--//nav-item-->
 
@@ -67,7 +67,7 @@
                                 <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
                             </svg>
                         </span>
-                        <span class="nav-link-text">Aktivitas</span>
+                        <span class="nav-link-text">Klien</span>
                     </a><!--//nav-link-->
                 </li><!--//nav-item-->
                 
@@ -80,7 +80,7 @@
                                 <path fill-rule="evenodd" d="M4 1.5a.5.5 0 0 0-1 0V4H2.5a.5.5 0 0 0 0 1H4v2.5a.5.5 0 0 0 1 0V5h2.5a.5.5 0 0 0 0-1H5V1.5zM5 11a1 1 0 0 1 1 1v1h4v-1a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-3zm1 1v2h4v-2H6zm0-2h4V8H6v2z" />
                             </svg>
                         </span>
-                        <span class="nav-link-text">Artikel</span>
+                        <span class="nav-link-text">Blog</span>
                     </a><!--//nav-link-->
                 </li><!--//nav-item-->
 

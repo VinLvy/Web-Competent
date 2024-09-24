@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Admin CarHab</title>
+    <title>Admin Competent</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
