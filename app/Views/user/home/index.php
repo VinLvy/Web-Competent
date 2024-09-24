@@ -131,10 +131,11 @@
             <div class="col-lg-8">
                 <!-- Menampilkan artikel terbaru secara otomatis -->
                 <div class="position-relative mb-3">
-                    <img class="img-fluid w-100" src="<?= base_url('asset-user/images/' . $artikelterbaru[0]->foto_artikel); ?>" style="object-fit: cover;">
+                    <img class="img-fluid w-100" src="<?= base_url('asset-user/images/' . $artikelterbaru[0]->foto_artikel); ?>" style="object-fit: cover;"
+                        alt="<?= session('lang') === 'en' ? $artikelterbaru[0]->judul_artikel_en : $artikelterbaru[0]->judul_artikel; ?>">
                     <div class="bg-white border border-top-0 p-4">
                         <div class="mb-3">
-                            <a class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikelterbaru[0]->created_at)); ?></a>
+                            <p class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikelterbaru[0]->created_at)); ?></p>
                         </div>
 
                         <!-- Menampilkan judul artikel terbaru berdasarkan bahasa -->
@@ -149,6 +150,7 @@
                     </div>
                 </div>
                 <!-- End Artikel Terbaru -->
+
             </div>
 
             <div class="col-lg-4">
