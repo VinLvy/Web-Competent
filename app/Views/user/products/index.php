@@ -31,8 +31,6 @@
             $count = 0;
             $total_products = count($tbproduk);
             foreach ($tbproduk as $index => $produk) :
-                if ($count >= 3) break;
-
                 // Menentukan apakah ini produk terakhir dan ganjil
                 $is_last_odd = ($index == $total_products - 1) && ($total_products % 2 != 0);
             ?>
