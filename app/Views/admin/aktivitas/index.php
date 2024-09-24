@@ -5,11 +5,11 @@
     <div class="container-xl">
         <div class="row g-3 mb-4 align-items-center justify-content-between">
             <div class="col-auto">
-                <h1 class="app-page-title mb-0">Daftar Aktivitas</h1>
+                <h1 class="app-page-title mb-0">Daftar Klien</h1>
             </div>
             </br>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a href="<?php echo base_url() . "admin/aktivitas/tambah" ?>" class="btn btn-primary me-md-2"> + Tambah Ativitas </a>
+                <a href="<?php echo base_url() . "admin/aktivitas/tambah" ?>" class="btn btn-primary me-md-2"> + Tambah Klien</a>
             </div>
         </div><!--//row-->
 
@@ -28,11 +28,11 @@
                             <table class="table app-table-hover mb-0 text-left">
                                 <thead>
                                     <tr>
-                                        <th class="text-center" valign="middle">Nama Aktivitas (In)</th>
-                                        <th class="text-center" valign="middle">Nama Aktivitas (En)</th>
-                                        <th class="text-center" valign="middle">Deskripsi Aktivitas (In)</th>
-                                        <th class="text-center" valign="middle">Deskripsi Aktivitas (En)</th>
-                                        <th class="text-center" valign="middle">Foto Aktivitas</th>
+                                        <th class="text-center" valign="middle">Nama Klien (In)</th>
+                                        <th class="text-center" valign="middle">Nama Klien (En)</th>
+                                        <th class="text-center" valign="middle">Deskripsi Klien (In)</th>
+                                        <th class="text-center" valign="middle">Deskripsi Klien (En)</th>
+                                        <th class="text-center" valign="middle">Foto Klien</th>
                                         <th class="text-center" valign="middle">Aksi</th>
                                     </tr>
                                 </thead>
