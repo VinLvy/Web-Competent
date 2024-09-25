@@ -46,13 +46,13 @@
                                 } ?>" class="img-fluid lazyload">
                             </div>
                             <div class="col-sm-7">
-                                <h3 class="h3-link"><?php if (lang('Blog.Languange') == 'en') {
+                                <h4 class="h3-link"><?php if (lang('Blog.Languange') == 'en') {
                                                         echo $produk->nama_produk_en;
                                                     } ?>
                                     <?php if (lang('Blog.Languange') == 'in') {
                                         echo $produk->nama_produk_in;
                                     } ?>
-                                </h3>
+                                </h4>
                                 <p style="color: #555;">
                                     <?php
                                     $lang = lang('Blog.Languange');
@@ -64,7 +64,7 @@
                                     $deskripsi_produk_bersih = strip_tags($deskripsi_produk);
 
                                     // Memotong deskripsi menjadi 20 kata pertama
-                                    $deskripsi_produk_20_kata = implode(' ', array_slice(str_word_count($deskripsi_produk_bersih, 1), 0, 15));
+                                    $deskripsi_produk_20_kata = implode(' ', array_slice(str_word_count($deskripsi_produk_bersih, 1), 0, 12));
 
                                     echo $deskripsi_produk_20_kata . '...';
                                     ?>
