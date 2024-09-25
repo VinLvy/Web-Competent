@@ -72,7 +72,7 @@
                     <img class="img-fluid w-100" src="<?= base_url('asset-user/images/' . $artikel->foto_artikel); ?>" style="object-fit: cover;">
                     <div class="bg-white border border-top-0 p-4">
                         <div class="mb-3">
-                            <a class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikel->created_at)); ?></a>
+                            <p class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikel->created_at)); ?></p>
                         </div>
 
                         <!-- Tambahkan logika pemilihan bahasa -->
