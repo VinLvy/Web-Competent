@@ -1,5 +1,9 @@
+<?php
+$lang = session()->get('lang') ?? 'en';
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?= $lang ?>">
 
 <head>
     <meta charset="utf-8">
@@ -7,8 +11,28 @@
         <link rel="shortcut icon" href="<?= base_url('asset-user/images/') ?><?= $perusahaan->favicon_website ?>">
     <?php endforeach; ?>
     <title>
-        <?php echo $Title; ?> | <?php foreach ($profil as $descper) : ?><?= $descper->nama_perusahaan; ?><?php endforeach; ?>
+        <?= 
+            session()->get('lang') == 'id' 
+            ? ($tbproduk->meta_title_id ?? $tbaktivitas->meta_title_id ?? $artikel->meta_title_id ?? $meta['meta_title_id'] ?? 'Judul Standar Bahasa Indonesia') 
+            : ($tbproduk->meta_title_en ?? $tbaktivitas->meta_title_en ?? $artikel->meta_title_en ?? $meta['meta_title_en'] ?? 'Default English Title'); 
+        ?>
     </title>
+
+    <!-- Meta Tags -->
+    <meta name="title" content="<?= 
+        session()->get('lang') == 'id' 
+        ? ($tbproduk->meta_title_id ?? $tbaktivitas->meta_title_id ?? $artikel->meta_title_id ?? $meta['meta_title_id'] ?? 'Judul Standar Bahasa Indonesia') 
+        : ($tbproduk->meta_title_en ?? $tbaktivitas->meta_title_en ?? $artikel->meta_title_en ?? $meta['meta_title_en'] ?? 'Default English Title'); 
+    ?>">
+    <meta name="description" content="<?= 
+        session()->get('lang') == 'id' 
+        ? ($tbproduk->meta_description_id ?? $tbaktivitas->meta_description_id ?? $artikel->meta_description_id ?? $meta['meta_description_id'] ?? 'Deskripsi Standar Bahasa Indonesia') 
+        : ($tbproduk->meta_description_en ?? $tbaktivitas->meta_description_en ?? $artikel->meta_description_en ?? $meta['meta_description_en'] ?? 'Default English Description'); 
+    ?>">
+
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="<?= current_url() ?>">
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free Website Template" name="keywords">
     <meta content="Free Website Template" name="description">

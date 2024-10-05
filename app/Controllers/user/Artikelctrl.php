@@ -6,26 +6,36 @@ use App\Controllers\user\BaseController;
 use App\Models\ProfilModel;
 use App\Models\SliderModel;
 use App\Models\ArtikelModel;
+use App\Models\MetaModel;
 
 class Artikelctrl extends BaseController
 {
     private $ProfilModel;
     private $SliderModel;
     private $ArtikelModel;
+    private $MetaModel;
 
     public function __construct()
     {
         $this->ProfilModel = new ProfilModel();
         $this->SliderModel = new SliderModel();
         $this->ArtikelModel = new ArtikelModel();
+        $this->MetaModel = new MetaModel();
     }
 
     public function index()
     {
+        // Ambil bahasa dari session, default 'en'
+        $lang = session()->get('lang') ?? 'en';
+
+        $meta = $this->MetaModel->where('nama_halaman', 'Blog')->first();
+
         $data = [
             'profil' => $this->ProfilModel->findAll(),
             'tbslider' => $this->SliderModel->findAll(),
             'artikelterbaru' => $this->ArtikelModel->getArtikelTerbaru(),
+            'lang' => $lang,
+            'meta' => $meta
         ];
 
         helper('text');
@@ -34,22 +44,30 @@ class Artikelctrl extends BaseController
         $metaDescription = $this->generateMetaDescription($data);
         $data['Meta'] = character_limiter($metaDescription, 150);
 
-        // Set judul halaman default
+        // Set judul halaman berdasarkan bahasa
         $data['Title'] = lang('Blog.headerBlogs');
 
         return view('user/artikel/index', $data);
     }
 
-    public function detail($id_artikel)
+
+
+    public function detail($slug_artikel)
     {
-        $artikel = $this->ArtikelModel->getDetailArtikel($id_artikel);
+        $lang = session()->get('lang') ?? 'en';
+
+        // Cari artikel berdasarkan slug, bukan ID
+        $artikel = $this->ArtikelModel->where('slug_id', $slug_artikel)
+            ->orWhere('slug_en', $slug_artikel)
+            ->first();
 
         if (!$artikel) {
-            throw new \CodeIgniter\Exceptions\PageNotFoundException("Artikel dengan ID $id_artikel tidak ditemukan");
+            throw new \CodeIgniter\Exceptions\PageNotFoundException("Artikel dengan slug $slug_artikel tidak ditemukan");
         }
 
         // Tentukan bahasa (dengan fallback jika tidak ada session)
         $language = session('lang') ?? 'in';
+        
 
         // Memilih judul dan deskripsi berdasarkan session bahasa
         $judul_artikel = $language === 'in' ? $artikel->judul_artikel : $artikel->judul_artikel_en;
@@ -58,10 +76,11 @@ class Artikelctrl extends BaseController
         $data = [
             'profil' => $this->ProfilModel->findAll(),
             'artikel' => $artikel,
-            'artikel_lain' => $this->ArtikelModel->getArtikelLainnya($id_artikel, 4),
+            'artikel_lain' => $this->ArtikelModel->getArtikelLainnya($artikel->id_artikel, 4),  // Gunakan ID dari artikel yang ditemukan
             'judul_artikel' => $judul_artikel,
             'deskripsi_artikel' => $deskripsi_artikel,
             'language' => $language, // Kirim variabel bahasa ke view
+            'lang' => $lang,
         ];
 
         helper('text');
@@ -75,6 +94,7 @@ class Artikelctrl extends BaseController
 
         return view('user/artikel/detail', $data);
     }
+
 
     private function generateMetaDescription($data)
     {

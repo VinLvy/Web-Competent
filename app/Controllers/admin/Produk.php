@@ -6,6 +6,17 @@ use App\Models\ProdukModel;
 
 class Produk extends BaseController
 {
+    public function generateSlug($string)
+    {
+        // Ubah string menjadi huruf kecil
+        $slug = strtolower($string);
+        // Hapus semua karakter non-alfanumerik kecuali spasi
+        $slug = preg_replace('/[^a-z0-9\s]/', '', $slug);
+        // Ganti spasi dengan tanda hubung
+        $slug = preg_replace('/\s+/', '-', $slug);
+        return $slug;
+    }
+
     public function index()
     {
         // Pengecekan apakah pengguna sudah login atau belum
@@ -46,6 +57,15 @@ class Produk extends BaseController
         $currentDateTime = date('dmYHis');
         $nama_produk_in = $this->request->getVar("nama_produk_in");
         $nama_produk_en = $this->request->getVar("nama_produk_en");
+        $meta_title_id = $this->request->getVar("meta_title_id");
+        $meta_title_en = $this->request->getVar("meta_title_en");
+        $meta_description_id = $this->request->getVar("meta_description_id");
+        $meta_description_en = $this->request->getVar("meta_description_en");
+        
+
+        // Buat slug_id dari judul_artikel
+        $slug_id = $this->generateSlug($nama_produk_in);
+        $slug_en = $this->generateSlug($nama_produk_en);
 
         // Validasi nama produk Indonesia
         if (!preg_match('/^[a-zA-Z0-9\s]+$/', $nama_produk_in)) {
@@ -86,7 +106,14 @@ class Produk extends BaseController
                 'nama_produk_en' => $this->request->getVar("nama_produk_en"),
                 'deskripsi_produk_in' => $this->request->getVar("deskripsi_produk_in"),
                 'deskripsi_produk_en' => $this->request->getVar("deskripsi_produk_en"),
-                'foto_produk' => $newFileName
+                'foto_produk' => $newFileName,
+                'slug_id' => $slug_id,
+                'slug_en' => $slug_en,
+                'meta_title_id' => $meta_title_id,
+                'meta_title_en' => $meta_title_en,
+                'meta_description_id' => $meta_description_id,
+                'meta_description_en' => $meta_description_en,
+                
             ];
             $produkModel->save($data);
 
@@ -124,6 +151,14 @@ class Produk extends BaseController
         $nama_produk_in = $this->request->getVar("nama_produk_in");
         $nama_produk_en = $this->request->getVar("nama_produk_en");
         $file_foto = $this->request->getFile('foto_produk');
+        $meta_title_id = $this->request->getVar("meta_title_id");
+        $meta_title_en = $this->request->getVar("meta_title_en");
+        $meta_description_id = $this->request->getVar("meta_description_id");
+        $meta_description_en = $this->request->getVar("meta_description_en");
+
+        // Buat slug_id dari judul_artikel
+        $slug_id = $this->generateSlug($nama_produk_in);
+        $slug_en = $this->generateSlug($nama_produk_en);
 
         // Validasi nama produk Indonesia
         if (!preg_match('/^[a-zA-Z0-9\s]+$/', $nama_produk_in)) {
@@ -166,7 +201,15 @@ class Produk extends BaseController
             'nama_produk_en' => $nama_produk_en,
             'deskripsi_produk_in' => $this->request->getPost("deskripsi_produk_in"),
             'deskripsi_produk_en' => $this->request->getPost("deskripsi_produk_en"),
+            'meta_title_id' => $meta_title_id,
+            'meta_title_en' => $meta_title_en,
+            'meta_description_id' => $meta_description_id,
+            'meta_description_en' => $meta_description_en,
+            'slug_id' => $slug_id,
+            'slug_en' => $slug_en,
         ];
+
+
 
         // Update the product data in the database
         $produkModel->where('id_produk', $id_produk)->set($data)->update();
