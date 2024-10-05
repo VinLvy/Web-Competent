@@ -3,7 +3,8 @@
 
 <!-- Page Header Start -->
 <div class="intro-section mb-5 position-relative overlay-bottom">
-    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px; background-image: url('asset-user/images/hero_1.jpg'); background-size: cover;">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5"
+        style="min-height: 400px; background-image: url('<?= base_url('asset-user/images/hero_1.jpg'); ?>'); background-size: cover;">
         <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">
             <?php foreach ($profil as $perusahaan) : ?>
                 <?php
@@ -30,20 +31,16 @@
             </div>
             <div class="col-md-5 mb-5 mb-md-0">
                 <?php foreach ($profil as $desc) : ?>
-                    
                     <div class="card contact-card h-100">
-                    <div class="contact-title">
-                        <h2><?= lang('Blog.contactInformation') ?></h2>
-                    </div>
+                        <div class="contact-title">
+                            <h2><?= lang('Blog.contactInformation') ?></h2>
+                        </div>
                         <div class="card-body d-flex flex-column justify-content-center">
-                            
                             <blockquote class="blockquote">
                                 <div class="contact_details_row clearfix">
-                                    
                                     <div class="contact-item">
                                         <div class="details">
                                             <span class="c_detail">
-                                            
                                                 <p>
                                                     <?php
                                                     if (session('lang') === 'en') {

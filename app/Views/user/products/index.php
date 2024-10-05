@@ -1,8 +1,11 @@
 <?= $this->extend('user/template/template') ?>
 <?= $this->Section('content'); ?>
 
+<?php $lang = session()->get('lang') ?? 'en'; ?>
+
 <div class="intro-section mb-5 position-relative overlay-bottom">
-    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px; background-image: url('asset-user/images/hero_1.jpg'); background-size: cover;">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5"
+        style="min-height: 400px; background-image: url('<?= base_url('asset-user/images/hero_1.jpg'); ?>'); background-size: cover;">
         <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">
             <?php foreach ($profil as $perusahaan) : ?>
                 <?php
@@ -28,43 +31,34 @@
         </div>
         <div class="row justify-content-center">
             <?php
-            $count = 0;
             $total_products = count($tbproduk);
             foreach ($tbproduk as $index => $produk) :
                 // Menentukan apakah ini produk terakhir dan ganjil
                 $is_last_odd = ($index == $total_products - 1) && ($total_products % 2 != 0);
             ?>
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4 px-4 <?php if ($is_last_odd) echo 'd-flex justify-content-center'; ?>">
-                    <a href="<?= base_url('product/detail/' . $produk->id_produk . '/' . url_title($produk->nama_produk_en) . '_' . url_title($produk->nama_produk_in)) ?>" class="article-card-link" style="text-decoration: none;">
+                    <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'product' : 'produk') . '/' . ($lang === 'en' ? $produk->slug_en : $produk->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
                         <div class="article-card row align-items-center" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                             <div class="col-sm-5" style="padding: 15px;">
-                                <img class="img-fluid mb-3 mb-sm-0 lazyload" style="border-radius: 10px;" data-src="asset-user/images/<?= $produk->foto_produk; ?>" alt="<?php if (lang('Blog.Languange') == 'en') {
-                                                                                                                                                                                echo $produk->nama_produk_en;
-                                                                                                                                                                            } ?>
-                                <?php if (lang('Blog.Languange') == 'in') {
-                                    echo $produk->nama_produk_in;
-                                } ?>" class="img-fluid lazyload">
+                                <img class="img-fluid mb-3 mb-sm-0 lazyload"
+                                    style="border-radius: 10px;"
+                                    data-src="<?= base_url('asset-user/images/' . $produk->foto_produk); ?>"
+                                    alt="<?= lang('Blog.Languange') == 'en' ? $produk->nama_produk_en : $produk->nama_produk_in; ?>" />
                             </div>
                             <div class="col-sm-7">
-                                <h4 class="h3-link"><?php if (lang('Blog.Languange') == 'en') {
-                                                        echo $produk->nama_produk_en;
-                                                    } ?>
-                                    <?php if (lang('Blog.Languange') == 'in') {
-                                        echo $produk->nama_produk_in;
-                                    } ?>
-                                </h4>
+                                <h3 class="h3-link">
+                                    <?= lang('Blog.Languange') == 'en' ? $produk->nama_produk_en : $produk->nama_produk_in; ?>
+                                </h3>
                                 <p style="color: #555;">
                                     <?php
-                                    $lang = lang('Blog.Languange');
-
                                     // Memilih deskripsi berdasarkan bahasa
-                                    $deskripsi_produk = ($lang == 'en') ? $produk->deskripsi_produk_en : $produk->deskripsi_produk_in;
+                                    $deskripsi_produk = (lang('Blog.Languange') == 'en') ? $produk->deskripsi_produk_en : $produk->deskripsi_produk_in;
 
                                     // Menghapus tag HTML dari deskripsi
                                     $deskripsi_produk_bersih = strip_tags($deskripsi_produk);
 
-                                    // Memotong deskripsi menjadi 20 kata pertama
-                                    $deskripsi_produk_20_kata = implode(' ', array_slice(str_word_count($deskripsi_produk_bersih, 1), 0, 12));
+                                    // Memotong deskripsi menjadi 15 kata pertama
+                                    $deskripsi_produk_20_kata = implode(' ', array_slice(str_word_count($deskripsi_produk_bersih, 1), 0, 15));
 
                                     echo $deskripsi_produk_20_kata . '...';
                                     ?>
@@ -73,10 +67,7 @@
                         </div>
                     </a>
                 </div>
-            <?php
-                $count++;
-            endforeach;
-            ?>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>

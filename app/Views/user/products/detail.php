@@ -25,12 +25,8 @@
         <?php foreach ($profil as $descper) : ?>
             <div class="row">
                 <div class="col-lg-6 mb-4 mb-lg-0" style="min-height: 500px; position: relative;">
-                    <img class="w-100 h-100 img-fluid img-overlap lazyload" data-src="<?= base_url('asset-user/images/' . $tbproduk->foto_produk) ?>" alt="<?php if (lang('Blog.Languange') == 'en') {
-                                                                                                                                                    echo $tbproduk->nama_produk_en;
-                                                                                                                                                } ?>
-                                    <?php if (lang('Blog.Languange') == 'in') {
-                                        echo $tbproduk->nama_produk_in;
-                                    } ?>">
+                    <img class="w-100 h-100 img-fluid img-overlap lazyload" data-src="<?= base_url('asset-user/images/' . $tbproduk->foto_produk) ?>"
+                        alt="<?= (lang('Blog.Languange') === 'en') ? $tbproduk->nama_produk_en : $tbproduk->nama_produk_in; ?>">
                 </div>
                 <div class="col-lg-5 ml-auto">
                     <h1 class="mb-3"><?php if (lang('Blog.Languange') == 'en') {

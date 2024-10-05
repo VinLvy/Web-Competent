@@ -2,7 +2,7 @@
 <?= $this->Section('content'); ?>
 
 <div class="intro-section mb-5 position-relative overlay-bottom">
-    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px; background-image: url('asset-user/images/hero_1.jpg'); background-size: cover;">
+    <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px; background-image: url('<?= base_url('asset-user/images/hero_1.jpg'); ?>'); background-size: cover;">
         <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">
             <?php foreach ($profil as $perusahaan) : ?>
                 <?php
@@ -26,10 +26,10 @@
         <?php foreach ($profil as $descper) : ?>
             <div class="row">
                 <div class="col-lg-6 mb-4 mb-lg-0" style="position: relative;">
-                    <img class="w-100 img-fluid img-overlap lazyload" 
-                         style="object-fit: cover;" 
-                         data-src="asset-user/images/<?= $descper->foto_utama; ?>" 
-                         alt="<?= $descper->nama_perusahaan; ?>">
+                    <img class="w-100 img-fluid img-overlap lazyload"
+                        style="object-fit: cover;"
+                        data-src="<?= base_url('asset-user/images/' . $descper->foto_utama); ?>"
+                        alt="<?= $descper->nama_perusahaan; ?>">
                 </div>
                 <div class="col-lg-5 ml-auto">
                     <h1 class="mb-3"><?= $descper->nama_perusahaan; ?></h1>

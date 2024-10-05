@@ -72,7 +72,7 @@
                     <img class="img-fluid w-100" src="<?= base_url('asset-user/images/' . $artikel->foto_artikel); ?>" style="object-fit: cover;">
                     <div class="bg-white border border-top-0 p-4">
                         <div class="mb-3">
-                            <p class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikel->created_at)); ?></p>
+                            <a class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikel->created_at)); ?></a>
                         </div>
 
                         <!-- Tambahkan logika pemilihan bahasa -->
@@ -107,7 +107,7 @@
                         </div>
                         <div class="bg-white border border-top-0 p-3">
                             <?php foreach ($artikel_lain as $artikel_item) : ?>
-                                <a href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>" class="article-link">
+                                <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'article' : 'artikel') . '/detail/' . ($lang === 'en' ? $artikel_item->slug_en : $artikel_item->slug_id)) ?>" class="article-link">
                                     <div class="d-flex align-items-center bg-white mb-3 article-item">
                                         <img class="img-fluid article-image" src="<?= base_url('asset-user/images/' . $artikel_item->foto_artikel); ?>" loading="lazy">
                                         <div class="w-100 h-100 d-flex flex-column justify-content-center article-content">
