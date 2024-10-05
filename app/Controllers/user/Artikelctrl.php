@@ -87,7 +87,7 @@ class Artikelctrl extends BaseController
 
         // Set meta description berdasarkan bahasa session
         $metaDescription = $this->generateMetaDescription($data);
-        $data['Meta'] = character_limiter($metaDescription, 150);
+        $data['Meta'] = character_limiter($metaDescription, 160);
 
         // Set judul halaman sesuai judul artikel yang sesuai dengan bahasa
         $data['Title'] = $judul_artikel ?: 'Detail Artikel';

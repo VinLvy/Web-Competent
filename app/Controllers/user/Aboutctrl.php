@@ -45,7 +45,7 @@ class Aboutctrl extends BaseController
             $teks = strip_tags($data['profil'][0]->deskripsi_perusahaan_en);
         }
 
-        $batasan = 150;
+        $batasan = 160;
         $data['Meta'] = character_limiter($teks, $batasan);
 
         return view('user/about/index', $data);

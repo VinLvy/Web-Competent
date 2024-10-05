@@ -51,7 +51,7 @@ class Contactctrl extends BaseController
             $teks = "Contact of $nama_perusahaan. $deskripsi_perusahaan";
         }
 
-        $batasan = 150;
+        $batasan = 160;
         $data['Meta'] = character_limiter($teks, $batasan);
 
         return view('user/contact/index', $data);

@@ -97,7 +97,7 @@ class Productsctrl extends BaseController
         }
 
         // Batasi meta description
-        $batasan = 150;
+        $batasan = 160;
         $data['Meta'] = character_limiter($teks, $batasan);
 
         return view('user/products/detail', $data);
