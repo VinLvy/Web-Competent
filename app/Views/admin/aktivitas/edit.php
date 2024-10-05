@@ -37,20 +37,35 @@
                                 </div>
                                 <p>*Ukuran foto maksimal 572x572 pixels</p>
                                 <p>*Foto harus berekstensi jpg/png/jpeg</p>
+                                <div class="mb-3">
+                                    <label class="form-label">Meta Title (ID)</label>
+                                    <input type="text" class="form-control" id="meta_title_id" name="meta_title_id" placeholder="Masukkan Meta Title (ID)" value="<?= old('meta_title_id', $aktivitasData->meta_title_id) ?>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Meta Description (ID)</label>
+                                    <input type="text" class="form-control" id="meta_description_id" name="meta_description_id" placeholder="Masukkan Meta Description (ID)" value="<?= old('meta_description_id', $aktivitasData->meta_description_id) ?>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Meta Title (EN)</label>
+                                    <input type="text" class="form-control" id="meta_title_en" name="meta_title_en" placeholder="Masukkan Meta Title (EN)" value="<?= old('meta_title_en', $aktivitasData->meta_title_en) ?>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Meta Description (EN)</label>
+                                    <input type="text" class="form-control" id="meta_description_en" name="meta_description_en" placeholder="Masukkan Meta Description (EN)" value="<?= old('meta_description_en', $aktivitasData->meta_description_en) ?>">
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
+                            <div class="row">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                </div>
+                                <div class="col">
+                                    <?php if (!empty(session()->getFlashdata('success'))) : ?>
+                                        <div class="alert alert-success" role="alert">
+                                            <?php echo session()->getFlashdata('success') ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
                             </div>
-                            <div class="col">
-                                <?php if (!empty(session()->getFlashdata('success'))) : ?>
-                                    <div class="alert alert-success" role="alert">
-                                        <?php echo session()->getFlashdata('success') ?>
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-                        </div>
                     </form>
                 </div>
             </div><!--//app-card-->

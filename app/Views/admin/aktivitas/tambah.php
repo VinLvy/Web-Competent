@@ -41,6 +41,22 @@
                                 </div>
                                 <p>*Ukuran foto maksimal 572x572 pixels</p>
                                 <p>*Foto harus berekstensi jpg/png/jpeg</p>
+                                <div class="mb-3">
+                                    <label class="form-label">Meta Title (ID)</label>
+                                    <input type="text" class="form-control" id="meta_title_id" name="meta_title_id" placeholder="Masukkan Meta Title (ID)" value="<?= old('meta_title_id') ?>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Meta Description (ID)</label>
+                                    <input type="text" class="form-control" id="meta_description_id" name="meta_description_id" placeholder="Masukkan Meta Description (ID)" value="<?= old('meta_description_id') ?>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Meta Title (EN)</label>
+                                    <input type="text" class="form-control" id="meta_title_en" name="meta_title_en" placeholder="Masukkan Meta Title (EN)" value="<?= old('meta_title_en') ?>">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Meta Description (EN)</label>
+                                    <input type="text" class="form-control" id="meta_description_en" name="meta_description_en" placeholder="Masukkan Meta Description (EN)" value="<?= old('meta_description_en') ?>">
+                                </div>
                             </div>
                         </div>
                         <div class="row">
