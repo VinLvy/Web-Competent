@@ -10,12 +10,18 @@ class ArtikelModel extends Model
     protected $primaryKey = "id_artikel";
     protected $returnType = "object";
     protected $allowedFields = [
-        'id_artikel', 
-        'judul_artikel', 
-        'judul_artikel_en', 
-        'foto_artikel', 
-        'deskripsi_artikel', 
-        'deskripsi_artikel_en'
+        'id_artikel',
+        'judul_artikel',
+        'judul_artikel_en',
+        'foto_artikel',
+        'deskripsi_artikel',
+        'deskripsi_artikel_en',
+        'slug_id',
+        'slug_en',
+        'meta_title_id',
+        'meta_description_id',
+        'meta_title_en',
+        'meta_description_en'
     ];
 
     public function getArtikelTerbaru()
@@ -24,16 +30,13 @@ class ArtikelModel extends Model
             ->findAll();
     }
 
-    public function getDetailArtikel($id_artikel)
+    public function getDetailArtikel($slug)
     {
-        $artikel = $this->find($id_artikel);
-
-        if (!$artikel) {
-            return null; // Atau return array kosong, tergantung pada kebutuhan Anda
-        }
-
-        return $artikel;
+        return $this->where('slug_id', $slug)
+            ->orWhere('slug_en', $slug)
+            ->first();
     }
+
 
     public function getArtikelLainnya($id_artikel, $limit = 4)
     {

@@ -6,6 +6,7 @@
 
 <!-- END slider -->
 
+
 <div class="popular_destination_area" style="background-color: #fccb04; padding: 50px 0; margin: 0;">
     <div class="container">
         <?php foreach ($profil as $title) :  ?>
@@ -28,8 +29,9 @@
                 <h1 class="text-primary text-uppercase" style=""><?php echo lang('Blog.titleAboutUs')  ?></h1>
             </div>
             <div class="row">
+
                 <div class="col-lg-6 mb-4 mb-lg-0" style="min-height: 500px; position: relative;">
-                    <img class="w-100 h-100 img-fluid img-overlap lazyload" data-src="asset-user/images/<?= $descper->foto_utama; ?>" alt="<?= $descper->nama_perusahaan; ?>">
+                    <img class="w-100 h-100 img-fluid img-overlap lazyload" data-src="<?= base_url('asset-user/images/' . $descper->foto_utama);  ?>" alt="<?= $descper->nama_perusahaan; ?>">
                 </div>
                 <div class="col-lg-5 ml-auto">
                     <h1 class="mb-3"><?= $descper->nama_perusahaan; ?></h1>
@@ -42,7 +44,9 @@
                         }
                         ?>
                     </p>
-                    <a href="<?= base_url('about') ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn text-black"><?= lang('Blog.btnReadmore'); ?></a>
+                    <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'about' : 'tentang-kami')) ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn text-black">
+                        <?= lang('Blog.btnReadmore'); ?>
+                    </a>
                 </div>
             </div>
         <?php endforeach; ?>
@@ -59,44 +63,33 @@
         </div>
         <div class="row justify-content-center">
             <?php
-            $count = 0;
             $total_products = count($tbproduk);
             foreach ($tbproduk as $index => $produk) :
-                if ($count >= 3) break;
-
                 // Menentukan apakah ini produk terakhir dan ganjil
                 $is_last_odd = ($index == $total_products - 1) && ($total_products % 2 != 0);
             ?>
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4 px-4 <?php if ($is_last_odd) echo 'd-flex justify-content-center'; ?>">
-                    <a href="<?= base_url('product/detail/' . $produk->id_produk . '/' . url_title($produk->nama_produk_en) . '_' . url_title($produk->nama_produk_in)) ?>" class="article-card-link" style="text-decoration: none;">
+                    <a href="<?=  base_url($lang . '/' . ($lang === 'en' ? 'product' : 'produk') . '/' . ($lang === 'en' ? $produk->slug_en : $produk->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
                         <div class="article-card row align-items-center" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                             <div class="col-sm-5" style="padding: 15px;">
-                                <img class="img-fluid mb-3 mb-sm-0 lazyload" style="border-radius: 10px;" data-src="asset-user/images/<?= $produk->foto_produk; ?>" alt="<?php if (lang('Blog.Languange') == 'en') {
-                                                                                                                                                                                echo $produk->nama_produk_en;
-                                                                                                                                                                            } ?>
-                                <?php if (lang('Blog.Languange') == 'in') {
-                                    echo $produk->nama_produk_in;
-                                } ?>" class="img-fluid lazyload">
+                                <img class="img-fluid mb-3 mb-sm-0 lazyload"
+                                    style="border-radius: 10px;"
+                                    data-src="<?= base_url('asset-user/images/' . $produk->foto_produk); ?>"
+                                    alt="<?= lang('Blog.Languange') == 'en' ? $produk->nama_produk_en : $produk->nama_produk_in; ?>" />
                             </div>
                             <div class="col-sm-7">
-                                <h3 class="h3-link"><?php if (lang('Blog.Languange') == 'en') {
-                                                        echo $produk->nama_produk_en;
-                                                    } ?>
-                                    <?php if (lang('Blog.Languange') == 'in') {
-                                        echo $produk->nama_produk_in;
-                                    } ?>
+                                <h3 class="h3-link">
+                                    <?= lang('Blog.Languange') == 'en' ? $produk->nama_produk_en : $produk->nama_produk_in; ?>
                                 </h3>
                                 <p style="color: #555;">
                                     <?php
-                                    $lang = lang('Blog.Languange');
-
                                     // Memilih deskripsi berdasarkan bahasa
-                                    $deskripsi_produk = ($lang == 'en') ? $produk->deskripsi_produk_en : $produk->deskripsi_produk_in;
+                                    $deskripsi_produk = (lang('Blog.Languange') == 'en') ? $produk->deskripsi_produk_en : $produk->deskripsi_produk_in;
 
                                     // Menghapus tag HTML dari deskripsi
                                     $deskripsi_produk_bersih = strip_tags($deskripsi_produk);
 
-                                    // Memotong deskripsi menjadi 20 kata pertama
+                                    // Memotong deskripsi menjadi 15 kata pertama
                                     $deskripsi_produk_20_kata = implode(' ', array_slice(str_word_count($deskripsi_produk_bersih, 1), 0, 15));
 
                                     echo $deskripsi_produk_20_kata . '...';
@@ -106,13 +99,10 @@
                         </div>
                     </a>
                 </div>
-            <?php
-                $count++;
-            endforeach;
-            ?>
+            <?php endforeach; ?>
         </div>
         <div class="text-center">
-            <a href="<?= base_url('product') ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn text-black"><?= lang('Blog.btnMoreTraining'); ?></a>
+            <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'product' : 'produk')) ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn text-black"><?= lang('Blog.btnMoreTraining'); ?></a>
         </div>
     </div>
 </div>
@@ -131,11 +121,10 @@
             <div class="col-lg-8">
                 <!-- Menampilkan artikel terbaru secara otomatis -->
                 <div class="position-relative mb-3">
-                    <img class="img-fluid w-100" src="<?= base_url('asset-user/images/' . $artikelterbaru[0]->foto_artikel); ?>" style="object-fit: cover;"
-                        alt="<?= session('lang') === 'en' ? $artikelterbaru[0]->judul_artikel_en : $artikelterbaru[0]->judul_artikel; ?>">
+                    <img class="img-fluid w-100" src="<?= base_url('asset-user/images/' . $artikelterbaru[0]->foto_artikel); ?>" alt="<?= $artikelterbaru[0]->judul_artikel ?>" style="object-fit: cover;">
                     <div class="bg-white border border-top-0 p-4">
                         <div class="mb-3">
-                            <p class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikelterbaru[0]->created_at)); ?></p>
+                            <a class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikelterbaru[0]->created_at)); ?></a>
                         </div>
 
                         <!-- Menampilkan judul artikel terbaru berdasarkan bahasa -->
@@ -150,7 +139,6 @@
                     </div>
                 </div>
                 <!-- End Artikel Terbaru -->
-
             </div>
 
             <div class="col-lg-4">
@@ -164,7 +152,7 @@
                     <div class="bg-white border border-top-0 p-3">
                         <?php foreach (array_slice($artikelterbaru, 1) as $artikel_item) : ?>
                             <!-- Membuat seluruh card artikel dapat diklik -->
-                            <a href="<?= base_url('/artikel/detail/' . $artikel_item->id_artikel) ?>" class="article-card-link" style="text-decoration: none;">
+                            <a href="<?=  base_url($lang . '/' . ($lang === 'en' ? 'article' : 'artikel') . '/' . ($lang === 'en' ? $artikel_item->slug_en : $artikel_item->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
                                 <div class="d-flex align-items-center bg-white mb-3 article-item">
                                     <img class="img-fluid article-image" src="<?= base_url('asset-user/images/' . $artikel_item->foto_artikel); ?>" loading="lazy" alt="<?= $artikel_item->judul_artikel ?>">
                                     <div class="w-100 h-100 d-flex flex-column justify-content-center article-content">

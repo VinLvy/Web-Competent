@@ -13,6 +13,18 @@ class Artikel extends BaseController
         $this->artikelModel = new ArtikelModel();
     }
 
+    public function generateSlug($string)
+    {
+        // Ubah string menjadi huruf kecil
+        $slug = strtolower($string);
+        // Hapus semua karakter non-alfanumerik kecuali spasi
+        $slug = preg_replace('/[^a-z0-9\s]/', '', $slug);
+        // Ganti spasi dengan tanda hubung
+        $slug = preg_replace('/\s+/', '-', $slug);
+        return $slug;
+    }
+
+
     public function index()
     {
         // Pengecekan apakah pengguna sudah login atau belum
@@ -50,6 +62,14 @@ class Artikel extends BaseController
         $judul_artikel_en = $this->request->getVar('judul_artikel_en');
         $deskripsi_artikel = $this->request->getVar('deskripsi_artikel');
         $deskripsi_artikel_en = $this->request->getVar('deskripsi_artikel_en');
+        $meta_title_id = $this->request->getVar("meta_title_id");
+        $meta_title_en = $this->request->getVar("meta_title_en");
+        $meta_description_id = $this->request->getVar("meta_description_id");
+        $meta_description_en = $this->request->getVar("meta_description_en");
+
+        // Buat slug_id dari judul_artikel
+        $slug_id = $this->generateSlug($judul_artikel);
+        $slug_en = $this->generateSlug($judul_artikel_en);
 
         // Validasi judul artikel dalam bahasa Indonesia
         if (!preg_match('/^[a-zA-Z0-9\s]+$/', $judul_artikel)) {
@@ -91,7 +111,13 @@ class Artikel extends BaseController
                 'judul_artikel_en' => $judul_artikel_en,
                 'deskripsi_artikel' => $deskripsi_artikel,
                 'deskripsi_artikel_en' => $deskripsi_artikel_en,
-                'foto_artikel' => $newFileName
+                'foto_artikel' => $newFileName,
+                'meta_title_id' => $meta_title_id,
+                'meta_title_en' => $meta_title_en,
+                'meta_description_id' => $meta_description_id,
+                'meta_description_en' => $meta_description_en,
+                'slug_id' => $slug_id,
+                'slug_en' => $slug_en,
             ];
 
             $this->artikelModel->insert($data);
@@ -131,6 +157,14 @@ class Artikel extends BaseController
         $judul_artikel_en = $this->request->getVar("judul_artikel_en");
         $deskripsi_artikel = $this->request->getVar("deskripsi_artikel");
         $deskripsi_artikel_en = $this->request->getVar("deskripsi_artikel_en");
+        $meta_title_id = $this->request->getVar("meta_title_id");
+        $meta_title_en = $this->request->getVar("meta_title_en");
+        $meta_description_id = $this->request->getVar("meta_description_id");
+        $meta_description_en = $this->request->getVar("meta_description_en");
+
+        // Buat slug_id dari judul_artikel
+        $slug_id = $this->generateSlug($judul_artikel);
+        $slug_en = $this->generateSlug($judul_artikel_en);
 
         // Validasi judul artikel dalam bahasa Indonesia
         if (!preg_match('/^[a-zA-Z0-9\s]+$/', $judul_artikel)) {
@@ -169,7 +203,13 @@ class Artikel extends BaseController
             'judul_artikel_en' => $judul_artikel_en,
             'deskripsi_artikel' => $deskripsi_artikel,
             'deskripsi_artikel_en' => $deskripsi_artikel_en,
-            'foto_artikel' => $newFileName
+            'foto_artikel' => $newFileName,
+            'meta_title_id' => $meta_title_id,
+            'meta_title_en' => $meta_title_en,
+            'meta_description_id' => $meta_description_id,
+            'meta_description_en' => $meta_description_en,
+            'slug_id' => $slug_id,
+            'slug_en' => $slug_en,
         ];
 
         $this->artikelModel->update($id_artikel, $data);

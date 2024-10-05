@@ -72,30 +72,78 @@ $routes->post('admin/artikel/proses_edit/(:num)', 'admin\Artikel::proses_edit/$1
 $routes->get('admin/artikel/delete/(:any)', 'admin\Artikel::delete/$1');
 
 
+$routes->get('admin/meta/index', 'admin\MetaController::index');
+$routes->get('admin/meta/tambah', 'admin\MetaController::tambah');
+$routes->post('admin/meta/proses_tambah', 'admin\MetaController::proses_tambah');
+$routes->get('admin/meta/edit/(:num)', 'admin\MetaController::edit/$1');
+$routes->post('admin/meta/proses_edit/(:num)', 'admin\MetaController::proses_edit/$1');
+$routes->get('admin/meta/delete/(:any)', 'admin\MetaController::delete/$1');
+
+
 //USER
+
+$routes->group('id', function ($routes) {
+    $routes->get('/', 'user\Homectrl::index'); // Rute untuk bahasa Indonesia
+    $routes->get('tentang-kami', 'user\Aboutctrl::index');
+    // route halaman produk
+    $routes->get('produk', 'user\Productsctrl::index');
+    $routes->get('produk/(:segment)', 'user\Productsctrl::detail/$1');
+    // routes halaman aktivitas
+    $routes->get('kegiatan', 'user\Aktivitasctrl::index');
+    $routes->get('kegiatan/(:segment)', 'user\Aktivitasctrl::detail/$1');
+    // routes halaman contact
+    $routes->get('kontak', 'user\Contactctrl::index');
+    // end frond end routes
+    // routes halaman artikel
+    $routes->get('artikel', 'user\Artikelctrl::index');
+    $routes->get('artikel/(:segment)', 'user\Artikelctrl::detail/$1');
+});
+
+$routes->group('en', function ($routes) {
+    $routes->get('/', 'user\Homectrl::index'); // Rute untuk bahasa Inggris
+    $routes->get('about', 'user\Aboutctrl::index');
+    // route halaman produk
+    $routes->get('product', 'user\Productsctrl::index');
+    $routes->get('product/(:segment)', 'user\Productsctrl::detail/$1');
+    // routes halaman aktivitas
+    $routes->get('activities', 'user\Aktivitasctrl::index');
+    $routes->get('activities/(:segment)', 'user\Aktivitasctrl::detail/$1');
+    // routes halaman contact
+    $routes->get('contact', 'user\Contactctrl::index');
+    // end frond end routes
+    // routes halaman artikel
+    $routes->get('article', 'user\Artikelctrl::index');
+    $routes->get('article/(:segment)', 'user\Artikelctrl::detail/$1');
+});
+
+
+$routes->get('/', function () {
+    return redirect()->to('/id/home'); // Default redirect ke /en/home
+});
+
 // start frond end routes
-$routes->get('/', 'user\Homectrl::index');
+// $routes->get('/', 'user\Homectrl::index');
 // route home beranda
 // $routes->get('user/home', 'user\Homectrl::index');
 // route halaman about
-$routes->get('about', 'user\Aboutctrl::index');
-// route halaman produk
-$routes->get('product', 'user\Productsctrl::index');
-$routes->get('product/detail/(:num)/(:segment)_(:segment)', 'user\Productsctrl::detail/$1/$2/$3');
-// routes halaman aktivitas
-$routes->get('activities', 'user\Aktivitasctrl::index');
-$routes->get('activities/detail/(:num)/(:segment)_(:segment)', 'user\Aktivitasctrl::detail/$1/$2/$3');
-// routes halaman contact
-$routes->get('contact', 'user\Contactctrl::index');
-// end frond end routes
-// routes halaman artikel
-$routes->get('artikel', 'user\Artikelctrl::index');
-$routes->get('artikel/detail/(:num)', 'user\Artikelctrl::detail/$1');
+// $routes->get('about', 'user\Aboutctrl::index');
+// // route halaman produk
+// $routes->get('product', 'user\Productsctrl::index');
+// $routes->get('product/detail/(:num)/(:segment)_(:segment)', 'user\Productsctrl::detail/$1/$2/$3');
+// // routes halaman aktivitas
+// $routes->get('activities', 'user\Aktivitasctrl::index');
+// $routes->get('activities/detail/(:num)/(:segment)_(:segment)', 'user\Aktivitasctrl::detail/$1/$2/$3');
+// // routes halaman contact
+// $routes->get('contact', 'user\Contactctrl::index');
+// // end frond end routes
+// // routes halaman artikel
+// $routes->get('artikel', 'user\Artikelctrl::index');
+// $routes->get('artikel/detail/(:num)', 'user\Artikelctrl::detail/$1');
 // end frond end routes
 
 // route language home
 // $routes->get('lang/{locale}', 'user\Homectrl::language');
-$routes->get('lang/(:segment)', 'user\Homectrl::language/$1');
+ $routes->get('/language/(:any)', 'user\Homectrl::language/$1');
 
 /*
  * --------------------------------------------------------------------

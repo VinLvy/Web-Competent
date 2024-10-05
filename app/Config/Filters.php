@@ -10,13 +10,15 @@ class Filters extends BaseConfig
 		'csrf'     => \CodeIgniter\Filters\CSRF::class,
 		'toolbar'  => \CodeIgniter\Filters\DebugToolbar::class,
 		'honeypot' => \CodeIgniter\Filters\Honeypot::class,
-		'usersAuth' => \App\Filters\UsersAuthFilter::class
+		'usersAuth' => \App\Filters\UsersAuthFilter::class,
+		'languagefilter' => \App\Filters\LanguageFilter::class,
 	];
 
 	// Always applied before every request
 	public $globals = [
 		'before' => [
 			'csrf',
+			'languagefilter' => ['except' => ['language/*']],
 			'usersAuth' => [
 				'except' => [
 					'login/*',
