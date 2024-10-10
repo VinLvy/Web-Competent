@@ -73,7 +73,7 @@
                 $is_last_odd = ($index == $total_products - 1) && ($total_products % 2 != 0);
             ?>
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4 px-4 <?php if ($is_last_odd) echo 'd-flex justify-content-center'; ?>">
-                    <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'product' : 'produk') . '/' . ($lang === 'en' ? $produk->slug_en : $produk->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
+                    <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'training-topics' : 'materi-pelatihan') . '/' . ($lang === 'en' ? $produk->slug_en : $produk->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
                         <div class="article-card row align-items-center" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                             <div class="col-sm-5" style="padding: 15px;">
                                 <img class="img-fluid mb-3 mb-sm-0 lazyload"
@@ -100,7 +100,7 @@
             <?php endforeach; ?>
         </div>
         <div class="text-center">
-            <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'product' : 'produk')) ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn text-black"><?= lang('Blog.btnMoreTraining'); ?></a>
+            <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'training-topics' : 'materi-pelatihan')) ?>" class="btn btn-primary font-weight-bold py-2 px-4 mt-2 custom-btn text-black"><?= lang('Blog.btnMoreTraining'); ?></a>
         </div>
     </div>
 </div>
@@ -150,7 +150,7 @@
                     <div class="bg-white border border-top-0 p-3">
                         <?php foreach (array_slice($artikelterbaru, 1) as $artikel_item) : ?>
                             <!-- Membuat seluruh card artikel dapat diklik -->
-                            <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'article' : 'artikel') . '/' . ($lang === 'en' ? $artikel_item->slug_en : $artikel_item->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
+                            <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'blogs' : 'blog') . '/' . ($lang === 'en' ? $artikel_item->slug_en : $artikel_item->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
                                 <div class="d-flex align-items-center bg-white mb-3 article-item">
                                     <img class="img-fluid article-image" src="<?= base_url('asset-user/images/' . $artikel_item->foto_artikel); ?>" loading="lazy" alt="<?= $artikel_item->judul_artikel ?>">
                                     <div class="w-100 h-100 d-flex flex-column justify-content-center article-content">
