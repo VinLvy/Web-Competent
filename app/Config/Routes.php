@@ -86,34 +86,34 @@ $routes->group('id', function ($routes) {
     $routes->get('/', 'user\Homectrl::index'); // Rute untuk bahasa Indonesia
     $routes->get('tentang-kami', 'user\Aboutctrl::index');
     // route halaman produk
-    $routes->get('produk', 'user\Productsctrl::index');
-    $routes->get('produk/(:segment)', 'user\Productsctrl::detail/$1');
+    $routes->get('materi-pelatihan', 'user\Productsctrl::index');
+    $routes->get('materi-pelatihan/(:segment)', 'user\Productsctrl::detail/$1');
     // routes halaman aktivitas
-    $routes->get('kegiatan', 'user\Aktivitasctrl::index');
-    $routes->get('kegiatan/(:segment)', 'user\Aktivitasctrl::detail/$1');
+    $routes->get('klien', 'user\Aktivitasctrl::index');
+    $routes->get('klien/(:segment)', 'user\Aktivitasctrl::detail/$1');
     // routes halaman contact
     $routes->get('kontak', 'user\Contactctrl::index');
     // end frond end routes
     // routes halaman artikel
-    $routes->get('artikel', 'user\Artikelctrl::index');
-    $routes->get('artikel/(:segment)', 'user\Artikelctrl::detail/$1');
+    $routes->get('blog', 'user\Artikelctrl::index');
+    $routes->get('blog/(:segment)', 'user\Artikelctrl::detail/$1');
 });
 
 $routes->group('en', function ($routes) {
     $routes->get('/', 'user\Homectrl::index'); // Rute untuk bahasa Inggris
     $routes->get('about', 'user\Aboutctrl::index');
     // route halaman produk
-    $routes->get('product', 'user\Productsctrl::index');
-    $routes->get('product/(:segment)', 'user\Productsctrl::detail/$1');
+    $routes->get('training-topics', 'user\Productsctrl::index');
+    $routes->get('training-topics/(:segment)', 'user\Productsctrl::detail/$1');
     // routes halaman aktivitas
-    $routes->get('activities', 'user\Aktivitasctrl::index');
-    $routes->get('activities/(:segment)', 'user\Aktivitasctrl::detail/$1');
+    $routes->get('clients', 'user\Aktivitasctrl::index');
+    $routes->get('clients/(:segment)', 'user\Aktivitasctrl::detail/$1');
     // routes halaman contact
     $routes->get('contact', 'user\Contactctrl::index');
     // end frond end routes
     // routes halaman artikel
-    $routes->get('article', 'user\Artikelctrl::index');
-    $routes->get('article/(:segment)', 'user\Artikelctrl::detail/$1');
+    $routes->get('blogs', 'user\Artikelctrl::index');
+    $routes->get('blogs/(:segment)', 'user\Artikelctrl::detail/$1');
 });
 
 

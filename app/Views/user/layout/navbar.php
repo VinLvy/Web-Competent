@@ -14,7 +14,7 @@
                 <div class="navbar-nav ml-auto p-4">
                     <?php
                     // Ambil bahasa yang disimpan di session
-                    $lang = session()->get('lang') ?? 'en'; // Default ke 'en' jika tidak ada di session
+                    $lang = session()->get('lang') ?? 'id'; // Default ke 'en' jika tidak ada di session
 
                     $current_url = uri_string();
 
@@ -23,17 +23,17 @@
 
                     // Definisikan tautan untuk setiap halaman berdasarkan bahasa
                     $aboutLink = ($lang_segment === 'en/') ? 'about' : 'tentang-kami';
-                    $articleLink = ($lang_segment === 'en/') ? 'article' : 'artikel';
-                    $productLink = ($lang_segment === 'en/') ? 'product' : 'produk';
-                    $activitiesLink = ($lang_segment === 'en/') ? 'activities' : 'kegiatan';
+                    $articleLink = ($lang_segment === 'en/') ? 'blogs' : 'blog';
+                    $productLink = ($lang_segment === 'en/') ? 'training-topics' : 'materi-pelatihan';
+                    $activitiesLink = ($lang_segment === 'en/') ? 'clients' : 'klien';
                     $contactLink = ($lang_segment === 'en/') ? 'contact' : 'kontak';
 
                     // Buat array untuk menggantikan segmen berdasarkan bahasa
                     $replace_map = [
                         'tentang-kami' => 'about',
-                        'artikel' => 'article',
-                        'produk' => 'product',
-                        'kegiatan' => 'activities',
+                        'blog' => 'blogs',
+                        'materi-pelatihan' => 'training-topics',
+                        'klien' => 'clients',
                         'kontak' => 'contact'
                     ];
 
