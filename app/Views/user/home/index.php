@@ -54,8 +54,6 @@
 </div>
 <!-- END block-2 -->
 
-<!-- <hr style="border: 1px solid #fb0404; width: 50%; margin: 20px auto;"> -->
-
 <div class="container-fluid pt-5" style="background-color: #fffbf2;">
     <div class="container">
         <div class="text-center mb-5">
@@ -63,13 +61,19 @@
         </div>
         <div class="row justify-content-center">
             <?php
+            // Menampilkan maksimal 3 produk
             $total_products = count($tbproduk);
+            $max_products = 3;
+
             foreach ($tbproduk as $index => $produk) :
+                // Batasi hanya menampilkan 3 produk
+                if ($index >= $max_products) break;
+
                 // Menentukan apakah ini produk terakhir dan ganjil
                 $is_last_odd = ($index == $total_products - 1) && ($total_products % 2 != 0);
             ?>
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4 px-4 <?php if ($is_last_odd) echo 'd-flex justify-content-center'; ?>">
-                    <a href="<?=  base_url($lang . '/' . ($lang === 'en' ? 'product' : 'produk') . '/' . ($lang === 'en' ? $produk->slug_en : $produk->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
+                    <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'product' : 'produk') . '/' . ($lang === 'en' ? $produk->slug_en : $produk->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
                         <div class="article-card row align-items-center" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                             <div class="col-sm-5" style="padding: 15px;">
                                 <img class="img-fluid mb-3 mb-sm-0 lazyload"
@@ -83,15 +87,9 @@
                                 </h3>
                                 <p style="color: #555;">
                                     <?php
-                                    // Memilih deskripsi berdasarkan bahasa
                                     $deskripsi_produk = (lang('Blog.Languange') == 'en') ? $produk->deskripsi_produk_en : $produk->deskripsi_produk_in;
-
-                                    // Menghapus tag HTML dari deskripsi
                                     $deskripsi_produk_bersih = strip_tags($deskripsi_produk);
-
-                                    // Memotong deskripsi menjadi 15 kata pertama
                                     $deskripsi_produk_20_kata = implode(' ', array_slice(str_word_count($deskripsi_produk_bersih, 1), 0, 15));
-
                                     echo $deskripsi_produk_20_kata . '...';
                                     ?>
                                 </p>
@@ -124,7 +122,7 @@
                     <img class="img-fluid w-100" src="<?= base_url('asset-user/images/' . $artikelterbaru[0]->foto_artikel); ?>" alt="<?= $artikelterbaru[0]->judul_artikel ?>" style="object-fit: cover;">
                     <div class="bg-white border border-top-0 p-4">
                         <div class="mb-3">
-                            <a class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikelterbaru[0]->created_at)); ?></a>
+                            <p class="text-uppercase mb-3 text-body"><?= date('d F Y', strtotime($artikelterbaru[0]->created_at)); ?></p>
                         </div>
 
                         <!-- Menampilkan judul artikel terbaru berdasarkan bahasa -->
@@ -152,7 +150,7 @@
                     <div class="bg-white border border-top-0 p-3">
                         <?php foreach (array_slice($artikelterbaru, 1) as $artikel_item) : ?>
                             <!-- Membuat seluruh card artikel dapat diklik -->
-                            <a href="<?=  base_url($lang . '/' . ($lang === 'en' ? 'article' : 'artikel') . '/' . ($lang === 'en' ? $artikel_item->slug_en : $artikel_item->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
+                            <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'article' : 'artikel') . '/' . ($lang === 'en' ? $artikel_item->slug_en : $artikel_item->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
                                 <div class="d-flex align-items-center bg-white mb-3 article-item">
                                     <img class="img-fluid article-image" src="<?= base_url('asset-user/images/' . $artikel_item->foto_artikel); ?>" loading="lazy" alt="<?= $artikel_item->judul_artikel ?>">
                                     <div class="w-100 h-100 d-flex flex-column justify-content-center article-content">

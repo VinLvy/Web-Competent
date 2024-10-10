@@ -18,3 +18,12 @@
         </a>
     </div>
 </div>
+
+<style>
+    /* Atur jarak slider pada tampilan mobile */
+    @media (max-width: 767.98px) {
+        #blog-carousel {
+            margin-top: 80px; /* Tambahkan jarak atas */
+        }
+    }
+</style>
