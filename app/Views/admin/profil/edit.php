@@ -29,7 +29,7 @@
 							<textarea class="form-control tiny" id="deskripsi_perusahaan_in" name="deskripsi_perusahaan_in"><?= $profil_pengguna->deskripsi_perusahaan_in; ?></textarea>
 						</div>
 						<div class="mb-3">
-							<label for="deskripsi_perusahaan_en" class="form-label">Deskripsi Perusahaan (Iggris)</label>
+							<label for="deskripsi_perusahaan_en" class="form-label">Deskripsi Perusahaan (Inggris)</label>
 							<textarea class="form-control tiny" id="deskripsi_perusahaan_en" name="deskripsi_perusahaan_en"><?= $profil_pengguna->deskripsi_perusahaan_en; ?></textarea>
 						</div>
 						<div class="mb-3">
