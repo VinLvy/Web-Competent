@@ -405,3 +405,133 @@ INFO - 2024-10-11 06:30:47 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-10-11 06:30:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-10-11 06:31:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-10-11 06:31:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-11 06:36:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-11 06:36:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-11 06:37:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-11 06:41:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-11 06:41:18 --> Undefined variable $lang
+in APPPATH\Views\user\products\detail.php on line 5.
+ 1 APPPATH\Views\user\products\detail.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $lang', 'D:\\Documents\\PKL\\Web Pribadi\\competent-academy\\competent\\app\\Views\\user\\products\\detail.php', 5)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\Documents\\PKL\\Web Pribadi\\competent-academy\\competent\\app\\Views\\user\\products\\detail.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('user/products/detail', [], true)
+ 5 APPPATH\Controllers\user\Productsctrl.php(100): view('user/products/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\user\Productsctrl->detail('pelatihan-negosiasi')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\user\Productsctrl))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Documents\\PKL\\Web Pribadi\\competent-academy\\competent\\public\\index.php')
+INFO - 2024-10-11 06:41:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-11 06:41:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-11 06:41:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-11 06:41:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-10-11 06:41:58 --> Undefined variable $produk
+in APPPATH\Views\user\home\index.php on line 11.
+ 1 APPPATH\Views\user\home\index.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $produk', 'D:\\Documents\\PKL\\Web Pribadi\\competent-academy\\competent\\app\\Views\\user\\home\\index.php', 11)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\Documents\\PKL\\Web Pribadi\\competent-academy\\competent\\app\\Views\\user\\home\\index.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('user/home/index', [], true)
+ 5 APPPATH\Controllers\user\Homectrl.php(60): view('user/home/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\user\Homectrl->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\user\Homectrl))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Documents\\PKL\\Web Pribadi\\competent-academy\\competent\\public\\index.php')
+INFO - 2024-10-11 06:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-11 06:45:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-11 06:45:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 06:45:29 --> Generated URL: http://localhost:8080/id/materi-pelatihan/pelatihan-negosiasi
+INFO - 2024-10-11 06:45:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 06:45:32 --> Generated URL: http://localhost:8080/en/training-topics/negotiation-training
+INFO - 2024-10-11 06:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 06:47:13 --> Generated URL: http://localhost:8080/en/training-topics/negotiation-training
+INFO - 2024-10-11 06:54:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 06:54:09 --> Generated URL: http://localhost:8080/id/materi-pelatihan/pelatihan-negosiasi
+INFO - 2024-10-11 06:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 06:57:35 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-negosiasi
+INFO - 2024-10-11 06:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 06:57:37 --> Generated URL: http://localhost:8080/id/training-topics/negotiation-training
+INFO - 2024-10-11 06:57:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 06:57:39 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-negosiasi
+INFO - 2024-10-11 06:57:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-11 06:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 06:57:44 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-negosiasi
+INFO - 2024-10-11 06:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 06:57:46 --> Generated URL: http://localhost:8080/id/training-topics/negotiation-training
+INFO - 2024-10-11 07:01:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:01:05 --> Generated URL: http://localhost:8080/id/training-topics/negotiation-training
+DEBUG - 2024-10-11 07:01:05 --> English URL: http://localhost:8080/id/materi-pelatihan/pelatihan-negosiasi
+DEBUG - 2024-10-11 07:01:05 --> Indonesian URL: http://localhost:8080/id/materi-pelatihan/pelatihan-negosiasi
+INFO - 2024-10-11 07:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:01:32 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-negosiasi
+DEBUG - 2024-10-11 07:01:32 --> English URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+DEBUG - 2024-10-11 07:01:32 --> Indonesian URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+INFO - 2024-10-11 07:01:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:01:36 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-negosiasi
+DEBUG - 2024-10-11 07:01:36 --> English URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+DEBUG - 2024-10-11 07:01:36 --> Indonesian URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+INFO - 2024-10-11 07:04:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:04:05 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-negosiasi
+DEBUG - 2024-10-11 07:04:05 --> English URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+DEBUG - 2024-10-11 07:04:05 --> Indonesian URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+INFO - 2024-10-11 07:04:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:04:07 --> Generated URL: http://localhost:8080/id/training-topics/negotiation-training
+DEBUG - 2024-10-11 07:04:07 --> English URL: http://localhost:8080/id/materi-pelatihan/pelatihan-negosiasi
+DEBUG - 2024-10-11 07:04:07 --> Indonesian URL: http://localhost:8080/id/materi-pelatihan/pelatihan-negosiasi
+INFO - 2024-10-11 07:05:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:08 --> Generated URL: http://localhost:8080/id/training-topics/negotiation-training
+DEBUG - 2024-10-11 07:05:08 --> English URL: http://localhost:8080/id/materi-pelatihan/pelatihan-negosiasi
+DEBUG - 2024-10-11 07:05:08 --> Indonesian URL: http://localhost:8080/id/materi-pelatihan/pelatihan-negosiasi
+INFO - 2024-10-11 07:05:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:11 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-negosiasi
+DEBUG - 2024-10-11 07:05:11 --> English URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+DEBUG - 2024-10-11 07:05:11 --> Indonesian URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+INFO - 2024-10-11 07:05:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:13 --> Generated URL: http://localhost:8080/id/training-topics/negotiation-training
+DEBUG - 2024-10-11 07:05:13 --> English URL: http://localhost:8080/id/materi-pelatihan/pelatihan-negosiasi
+DEBUG - 2024-10-11 07:05:13 --> Indonesian URL: http://localhost:8080/id/materi-pelatihan/pelatihan-negosiasi
+INFO - 2024-10-11 07:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:15 --> English URL: http://localhost:8080/id/
+DEBUG - 2024-10-11 07:05:15 --> Indonesian URL: http://localhost:8080/id/
+INFO - 2024-10-11 07:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:19 --> Generated URL: http://localhost:8080/id/training-topics/digital-marketing-training
+DEBUG - 2024-10-11 07:05:19 --> English URL: http://localhost:8080/id/materi-pelatihan/digital-marketing-training
+DEBUG - 2024-10-11 07:05:19 --> Indonesian URL: http://localhost:8080/id/materi-pelatihan/digital-marketing-training
+INFO - 2024-10-11 07:05:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:21 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-pemasaran-digital
+DEBUG - 2024-10-11 07:05:21 --> English URL: http://localhost:8080/en/training-topics/digital-marketing-training
+DEBUG - 2024-10-11 07:05:21 --> Indonesian URL: http://localhost:8080/en/training-topics/digital-marketing-training
+INFO - 2024-10-11 07:05:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:26 --> Generated URL: http://localhost:8080/id/training-topics/digital-marketing-training
+DEBUG - 2024-10-11 07:05:26 --> English URL: http://localhost:8080/id/materi-pelatihan/digital-marketing-training
+DEBUG - 2024-10-11 07:05:26 --> Indonesian URL: http://localhost:8080/id/materi-pelatihan/digital-marketing-training
+INFO - 2024-10-11 07:05:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:28 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-pemasaran-digital
+DEBUG - 2024-10-11 07:05:28 --> English URL: http://localhost:8080/en/training-topics/digital-marketing-training
+DEBUG - 2024-10-11 07:05:28 --> Indonesian URL: http://localhost:8080/en/training-topics/digital-marketing-training
+INFO - 2024-10-11 07:05:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:31 --> Generated URL: http://localhost:8080/id/training-topics/digital-marketing-training
+DEBUG - 2024-10-11 07:05:31 --> English URL: http://localhost:8080/id/materi-pelatihan/digital-marketing-training
+DEBUG - 2024-10-11 07:05:31 --> Indonesian URL: http://localhost:8080/id/materi-pelatihan/digital-marketing-training
+INFO - 2024-10-11 07:05:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:34 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-pemasaran-digital
+DEBUG - 2024-10-11 07:05:34 --> English URL: http://localhost:8080/en/training-topics/digital-marketing-training
+DEBUG - 2024-10-11 07:05:34 --> Indonesian URL: http://localhost:8080/en/training-topics/digital-marketing-training
+INFO - 2024-10-11 07:05:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:38 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-11 07:05:38 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-11 07:05:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:40 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-pemasaran-digital
+DEBUG - 2024-10-11 07:05:40 --> English URL: http://localhost:8080/en/training-topics/pelatihan-pemasaran-digital
+DEBUG - 2024-10-11 07:05:40 --> Indonesian URL: http://localhost:8080/en/training-topics/pelatihan-pemasaran-digital
+INFO - 2024-10-11 07:05:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:42 --> Generated URL: http://localhost:8080/id/training-topics/digital-marketing-training
+DEBUG - 2024-10-11 07:05:42 --> English URL: http://localhost:8080/id/materi-pelatihan/pelatihan-pemasaran-digital
+DEBUG - 2024-10-11 07:05:42 --> Indonesian URL: http://localhost:8080/id/materi-pelatihan/pelatihan-pemasaran-digital
+INFO - 2024-10-11 07:05:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 07:05:45 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-pemasaran-digital
+DEBUG - 2024-10-11 07:05:45 --> English URL: http://localhost:8080/en/training-topics/pelatihan-pemasaran-digital
+DEBUG - 2024-10-11 07:05:45 --> Indonesian URL: http://localhost:8080/en/training-topics/pelatihan-pemasaran-digital
+INFO - 2024-10-11 08:56:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-11 08:56:46 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-11 08:56:46 --> Indonesian URL: http://localhost:8080/en/

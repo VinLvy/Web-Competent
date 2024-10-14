@@ -25,7 +25,7 @@
         <div class="row justify-content-center">
             <?php foreach ($tbaktivitas as $aktivitas) : ?>
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4 px-4">
-                    <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'activities' : 'kegiatan') . '/' . ($lang === 'en' ? $aktivitas->slug_en : $aktivitas->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
+                    <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'clients' : 'klien') . '/' . ($lang === 'en' ? $aktivitas->slug_en : $aktivitas->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
                         <div class="article-card row align-items-center" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                             <div class="col-sm-5" style="padding: 15px;">
                                 <img class="img-fluid mb-3 mb-sm-0 lazyload"

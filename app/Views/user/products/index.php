@@ -37,7 +37,7 @@
                 $is_last_odd = ($index == $total_products - 1) && ($total_products % 2 != 0);
             ?>
                 <div class="col-lg-6 col-md-6 col-sm-12 mb-4 px-4 <?php if ($is_last_odd) echo 'd-flex justify-content-center'; ?>">
-                    <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'product' : 'produk') . '/' . ($lang === 'en' ? $produk->slug_en : $produk->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
+                <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'training-topics' : 'materi-pelatihan') . '/' . ($lang === 'en' ? $produk->slug_en : $produk->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
                         <div class="article-card row align-items-center" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                             <div class="col-sm-5" style="padding: 15px;">
                                 <img class="img-fluid mb-3 mb-sm-0 lazyload"

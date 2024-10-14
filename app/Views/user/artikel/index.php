@@ -33,7 +33,7 @@
 
             foreach ($artikelterbaru as $row) : ?>
                 <div class="col-lg-4 mb-4">
-                <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'article' : 'artikel') . '/' . ($lang === 'en' ? $row->slug_en : $row->slug_id)) ?>" class="article-card-link">
+                <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'blogs' : 'blog') . '/' . ($lang === 'en' ? $row->slug_en : $row->slug_id)) ?>" class="article-card-link">
                         <div class="article-card d-flex flex-column h-100 mb-3">
                             <img class="img-fluid w-100" style="object-fit: cover; border-radius: 15px 15px 0 0;" src="<?= base_url('asset-user/images/' . $row->foto_artikel); ?>" loading="lazy">
                             <div class="bg-white border border-top-0 p-4 flex-grow-1" style="border-radius: 0 0 15px 15px;">
