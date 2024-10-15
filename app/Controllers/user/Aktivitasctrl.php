@@ -61,50 +61,59 @@ class Aktivitasctrl extends BaseController
         $batasan = 150;
         $data['Meta'] = character_limiter($teks, $batasan);
 
-        // Set default title
-        // $data['Title'] = lang('Blog.headerClients');
-
         return view('user/aktivitas/index', $data);
     }
 
     public function detail($slug_aktivitas)
     {
-        // Cari aktivitas berdasarkan slug, bukan ID
+        // Ambil bahasa dari session, default ke 'id' jika tidak ada
+        $lang = session()->get('lang') ?? 'id';
+
+        // Cari aktivitas berdasarkan slug untuk bahasa Indonesia dan Inggris
         $aktivitas = $this->AktivitasModel->where('slug_id', $slug_aktivitas)
-                                          ->orWhere('slug_en', $slug_aktivitas)
-                                          ->first();
-    
+            ->orWhere('slug_en', $slug_aktivitas)
+            ->first();
+
+        // Jika aktivitas tidak ditemukan, tampilkan halaman 404
         if (!$aktivitas) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException("Aktivitas dengan slug $slug_aktivitas tidak ditemukan");
         }
-    
+
+        // Tentukan slug yang benar sesuai bahasa yang dipilih
+        $slug_id = $aktivitas->slug_id;
+        $slug_en = $aktivitas->slug_en;
+        $slug_baru = ($lang === 'id') ? $slug_id : $slug_en;
+
+        // Tentukan prefix URL berdasarkan bahasa
+        $prefix_url = ($lang === 'id') ? 'aktivitas' : 'activities';
+
+        // Jika slug di URL tidak sesuai dengan bahasa yang dipilih, redirect ke slug yang benar
+        if ($slug_aktivitas !== $slug_baru) {
+            return redirect()->to(base_url($lang . '/' . $prefix_url . '/' . $slug_baru));
+        }
+
+        // Tentukan nama dan deskripsi aktivitas berdasarkan bahasa
+        $nama_aktivitas = $lang === 'id' ? $aktivitas->nama_aktivitas_in : $aktivitas->nama_aktivitas_en;
+        $deskripsi_aktivitas = $lang === 'id' ? strip_tags($aktivitas->deskripsi_aktivitas_in) : strip_tags($aktivitas->deskripsi_aktivitas_en);
+
         $data = [
             'profil' => $this->ProfilModel->findAll(),
-            'tbaktivitas' => $aktivitas,
+            'tbaktivitas' => $aktivitas,  // Aktivitas ditemukan
+            'nama_aktivitas' => $nama_aktivitas,
+            'deskripsi_aktivitas' => $deskripsi_aktivitas,
+            'lang' => $lang, // Kirim variabel bahasa ke view
         ];
-    
+
         helper('text');
-    
-        // Tentukan nama dan deskripsi aktivitas berdasarkan bahasa
-        if (session('lang') === 'id') {
-            $nama_aktivitas = $data['tbaktivitas']->nama_aktivitas_in;
-            $deskripsi_aktivitas = strip_tags($data['tbaktivitas']->deskripsi_aktivitas_in);
-            
-            $data['Title'] = $data['tbaktivitas']->nama_aktivitas_in ?? '';
-            $teks = "$nama_aktivitas. $deskripsi_aktivitas";
-        } else {
-            $nama_aktivitas = $data['tbaktivitas']->nama_aktivitas_en;
-            $deskripsi_aktivitas = strip_tags($data['tbaktivitas']->deskripsi_aktivitas_en);
-    
-            $data['Title'] = $data['tbaktivitas']->nama_aktivitas_en ?? '';
-            $teks = "$nama_aktivitas. $deskripsi_aktivitas";
-        }
-    
-        // Batasi meta description
+
+        // Batasi meta description berdasarkan bahasa
+        $teks = "$nama_aktivitas. $deskripsi_aktivitas";
         $batasan = 160;
         $data['Meta'] = character_limiter($teks, $batasan);
-    
+
+        // Set judul halaman sesuai nama aktivitas yang sesuai dengan bahasa
+        $data['Title'] = $nama_aktivitas ?: 'Detail Aktivitas';
+
         return view('user/aktivitas/detail', $data);
     }
-    
 }
