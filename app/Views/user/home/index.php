@@ -79,15 +79,15 @@
                                 <img class="img-fluid mb-3 mb-sm-0 lazyload"
                                     style="border-radius: 10px;"
                                     data-src="<?= base_url('asset-user/images/' . $produk->foto_produk); ?>"
-                                    alt="<?= lang('Blog.Languange') == 'en' ? $produk->nama_produk_en : $produk->nama_produk_in; ?>" />
+                                    alt="<?= $lang === 'en' ? $produk->nama_produk_en : $produk->nama_produk_in; ?>" />
                             </div>
                             <div class="col-sm-7">
                                 <h3 class="h3-link">
-                                    <?= lang('Blog.Languange') == 'en' ? $produk->nama_produk_en : $produk->nama_produk_in; ?>
+                                    <?= $lang === 'en' ? $produk->nama_produk_en : $produk->nama_produk_in; ?>
                                 </h3>
                                 <p style="color: #555;">
                                     <?php
-                                    $deskripsi_produk = (lang('Blog.Languange') == 'en') ? $produk->deskripsi_produk_en : $produk->deskripsi_produk_in;
+                                    $deskripsi_produk = ($lang === 'en') ? $produk->deskripsi_produk_en : $produk->deskripsi_produk_in;
                                     $deskripsi_produk_bersih = strip_tags($deskripsi_produk);
                                     $deskripsi_produk_20_kata = implode(' ', array_slice(str_word_count($deskripsi_produk_bersih, 1), 0, 15));
                                     echo $deskripsi_produk_20_kata . '...';
@@ -104,7 +104,6 @@
         </div>
     </div>
 </div>
-
 
 
 <hr style="border: 1px solid #fccb04; width: 50%; margin-top: 70px;">

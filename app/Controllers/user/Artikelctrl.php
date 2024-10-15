@@ -56,7 +56,7 @@ class Artikelctrl extends BaseController
     {
         $lang = session()->get('lang') ?? 'en';
 
-        // Cari artikel berdasarkan slug, bukan ID
+        // Cari artikel berdasarkan slug ID (Bahasa Indonesia) atau slug EN (Bahasa Inggris)
         $artikel = $this->ArtikelModel->where('slug_id', $slug_artikel)
             ->orWhere('slug_en', $slug_artikel)
             ->first();
@@ -65,21 +65,30 @@ class Artikelctrl extends BaseController
             throw new \CodeIgniter\Exceptions\PageNotFoundException("Artikel dengan slug $slug_artikel tidak ditemukan");
         }
 
-        // Tentukan bahasa (dengan fallback jika tidak ada session)
-        $language = session('lang') ?? 'in';
-        
+        // Tentukan slug yang benar berdasarkan bahasa yang dipilih
+        $slug_id = $artikel->slug_id;
+        $slug_en = $artikel->slug_en;
+        $slug_baru = ($lang === 'id') ? $slug_id : $slug_en;
 
-        // Memilih judul dan deskripsi berdasarkan session bahasa
-        $judul_artikel = $language === 'in' ? $artikel->judul_artikel : $artikel->judul_artikel_en;
-        $deskripsi_artikel = $language === 'in' ? $artikel->deskripsi_artikel : $artikel->deskripsi_artikel_en;
+        // Tentukan prefix URL berdasarkan bahasa
+        $prefix_url = ($lang === 'id') ? 'blog' : 'blogs';
+
+        // Jika slug di URL tidak sesuai dengan bahasa yang dipilih, redirect ke slug yang benar
+        if ($slug_artikel !== $slug_baru) {
+            return redirect()->to(base_url($lang . '/' . $prefix_url . '/' . $slug_baru));
+        }
+
+        // Tentukan bahasa konten yang akan ditampilkan
+        $judul_artikel = $lang === 'in' ? $artikel->judul_artikel : $artikel->judul_artikel_en;
+        $deskripsi_artikel = $lang === 'in' ? $artikel->deskripsi_artikel : $artikel->deskripsi_artikel_en;
 
         $data = [
             'profil' => $this->ProfilModel->findAll(),
             'artikel' => $artikel,
-            'artikel_lain' => $this->ArtikelModel->getArtikelLainnya($artikel->id_artikel, 4),  // Gunakan ID dari artikel yang ditemukan
+            'artikel_lain' => $this->ArtikelModel->getArtikelLainnya($artikel->id_artikel, 4),
             'judul_artikel' => $judul_artikel,
             'deskripsi_artikel' => $deskripsi_artikel,
-            'language' => $language, // Kirim variabel bahasa ke view
+            'language' => $lang, // Kirim variabel bahasa ke view
             'lang' => $lang,
         ];
 
@@ -94,7 +103,6 @@ class Artikelctrl extends BaseController
 
         return view('user/artikel/detail', $data);
     }
-
 
     private function generateMetaDescription($data)
     {
