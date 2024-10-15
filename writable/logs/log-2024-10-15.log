@@ -1,0 +1,192 @@
+INFO - 2024-10-15 04:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:07:17 --> English URL: http://localhost:8080/id/
+DEBUG - 2024-10-15 04:07:17 --> Indonesian URL: http://localhost:8080/id/
+INFO - 2024-10-15 04:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:07:36 --> English URL: http://localhost:8080/id/blog
+DEBUG - 2024-10-15 04:07:36 --> Indonesian URL: http://localhost:8080/id/blog
+INFO - 2024-10-15 04:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:07:38 --> English URL: http://localhost:8080/id/blog/junior-programmer-certification-for-internship-students-at-elecomp-indonesia
+DEBUG - 2024-10-15 04:07:38 --> Indonesian URL: http://localhost:8080/id/blog/junior-programmer-certification-for-internship-students-at-elecomp-indonesia
+INFO - 2024-10-15 04:07:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:07:41 --> English URL: http://localhost:8080/id/blog/fatal-mistakes-exporter-websites-must-avoid
+DEBUG - 2024-10-15 04:07:41 --> Indonesian URL: http://localhost:8080/id/blog/fatal-mistakes-exporter-websites-must-avoid
+INFO - 2024-10-15 04:07:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:07:45 --> English URL: http://localhost:8080/en/blogs/fatal-mistakes-exporter-websites-must-avoid
+DEBUG - 2024-10-15 04:07:45 --> Indonesian URL: http://localhost:8080/en/blogs/fatal-mistakes-exporter-websites-must-avoid
+INFO - 2024-10-15 04:07:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:07:47 --> English URL: http://localhost:8080/en/training-topics
+DEBUG - 2024-10-15 04:07:47 --> Indonesian URL: http://localhost:8080/en/training-topics
+INFO - 2024-10-15 04:07:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:07:48 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-negosiasi
+DEBUG - 2024-10-15 04:07:48 --> English URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+DEBUG - 2024-10-15 04:07:48 --> Indonesian URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+INFO - 2024-10-15 04:07:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:07:54 --> English URL: http://localhost:8080/en/training-topics
+DEBUG - 2024-10-15 04:07:54 --> Indonesian URL: http://localhost:8080/en/training-topics
+INFO - 2024-10-15 04:07:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:07:55 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-negosiasi
+DEBUG - 2024-10-15 04:07:55 --> English URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+DEBUG - 2024-10-15 04:07:55 --> Indonesian URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+INFO - 2024-10-15 04:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:07:58 --> English URL: http://localhost:8080/en/training-topics
+DEBUG - 2024-10-15 04:07:58 --> Indonesian URL: http://localhost:8080/en/training-topics
+INFO - 2024-10-15 04:07:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:07:59 --> English URL: http://localhost:8080/en/clients
+DEBUG - 2024-10-15 04:07:59 --> Indonesian URL: http://localhost:8080/en/clients
+INFO - 2024-10-15 04:08:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:08:01 --> English URL: http://localhost:8080/en/clients/indosat
+DEBUG - 2024-10-15 04:08:01 --> Indonesian URL: http://localhost:8080/en/clients/indosat
+INFO - 2024-10-15 04:08:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:08:04 --> English URL: http://localhost:8080/en/clients
+DEBUG - 2024-10-15 04:08:04 --> Indonesian URL: http://localhost:8080/en/clients
+INFO - 2024-10-15 04:08:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:08:06 --> English URL: http://localhost:8080/en/contact
+DEBUG - 2024-10-15 04:08:06 --> Indonesian URL: http://localhost:8080/en/contact
+INFO - 2024-10-15 04:08:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:08:14 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:08:14 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:08:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:08:15 --> English URL: http://localhost:8080/en/about
+DEBUG - 2024-10-15 04:08:15 --> Indonesian URL: http://localhost:8080/en/about
+INFO - 2024-10-15 04:08:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:08:19 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:08:19 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:11:57 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:11:57 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:12:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:12:02 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:12:02 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:13:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:13:10 --> English URL: http://localhost:8080/en/training-topics
+DEBUG - 2024-10-15 04:13:10 --> Indonesian URL: http://localhost:8080/en/training-topics
+INFO - 2024-10-15 04:13:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:13:11 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-negosiasi
+DEBUG - 2024-10-15 04:13:11 --> English URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+DEBUG - 2024-10-15 04:13:11 --> Indonesian URL: http://localhost:8080/en/training-topics/pelatihan-negosiasi
+INFO - 2024-10-15 04:13:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:13:15 --> English URL: http://localhost:8080/en/blogs
+DEBUG - 2024-10-15 04:13:15 --> Indonesian URL: http://localhost:8080/en/blogs
+INFO - 2024-10-15 04:13:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:13:16 --> English URL: http://localhost:8080/en/blogs/sertifikasi-junior-programmer-untuk-mahasiswa-magang-di-elecomp-indonesia
+DEBUG - 2024-10-15 04:13:16 --> Indonesian URL: http://localhost:8080/en/blogs/sertifikasi-junior-programmer-untuk-mahasiswa-magang-di-elecomp-indonesia
+INFO - 2024-10-15 04:13:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:13:18 --> English URL: http://localhost:8080/en/clients
+DEBUG - 2024-10-15 04:13:18 --> Indonesian URL: http://localhost:8080/en/clients
+INFO - 2024-10-15 04:13:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:13:20 --> English URL: http://localhost:8080/en/clients/indosat
+DEBUG - 2024-10-15 04:13:20 --> Indonesian URL: http://localhost:8080/en/clients/indosat
+INFO - 2024-10-15 04:14:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:14:36 --> English URL: http://localhost:8080/en/clients
+DEBUG - 2024-10-15 04:14:36 --> Indonesian URL: http://localhost:8080/en/clients
+INFO - 2024-10-15 04:14:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:14:38 --> English URL: http://localhost:8080/en/clients/indosat
+DEBUG - 2024-10-15 04:14:38 --> Indonesian URL: http://localhost:8080/en/clients/indosat
+INFO - 2024-10-15 04:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:14:39 --> English URL: http://localhost:8080/en/clients
+DEBUG - 2024-10-15 04:14:39 --> Indonesian URL: http://localhost:8080/en/clients
+INFO - 2024-10-15 04:14:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:14:40 --> English URL: http://localhost:8080/en/about
+DEBUG - 2024-10-15 04:14:41 --> Indonesian URL: http://localhost:8080/en/about
+INFO - 2024-10-15 04:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:17:48 --> English URL: http://localhost:8080/en/about
+DEBUG - 2024-10-15 04:17:48 --> Indonesian URL: http://localhost:8080/en/about
+INFO - 2024-10-15 04:17:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:17:49 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:17:49 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:17:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:17:50 --> English URL: http://localhost:8080/en/blogs
+DEBUG - 2024-10-15 04:17:50 --> Indonesian URL: http://localhost:8080/en/blogs
+INFO - 2024-10-15 04:17:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:17:51 --> English URL: http://localhost:8080/en/training-topics
+DEBUG - 2024-10-15 04:17:51 --> Indonesian URL: http://localhost:8080/en/training-topics
+INFO - 2024-10-15 04:17:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:17:52 --> English URL: http://localhost:8080/en/clients
+DEBUG - 2024-10-15 04:17:52 --> Indonesian URL: http://localhost:8080/en/clients
+INFO - 2024-10-15 04:17:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:17:53 --> English URL: http://localhost:8080/en/contact
+DEBUG - 2024-10-15 04:17:53 --> Indonesian URL: http://localhost:8080/en/contact
+INFO - 2024-10-15 04:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:17:55 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:17:55 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:23:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:23:14 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:23:14 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:23:16 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:23:16 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:23:16 --> English URL: http://localhost:8080/en/about
+DEBUG - 2024-10-15 04:23:16 --> Indonesian URL: http://localhost:8080/en/about
+INFO - 2024-10-15 04:23:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:23:17 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:23:17 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:23:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:23:18 --> English URL: http://localhost:8080/en/about
+DEBUG - 2024-10-15 04:23:18 --> Indonesian URL: http://localhost:8080/en/about
+INFO - 2024-10-15 04:23:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:23:19 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:23:19 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:23:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:23:19 --> English URL: http://localhost:8080/en/blogs
+DEBUG - 2024-10-15 04:23:19 --> Indonesian URL: http://localhost:8080/en/blogs
+INFO - 2024-10-15 04:23:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:23:20 --> English URL: http://localhost:8080/en/training-topics
+DEBUG - 2024-10-15 04:23:20 --> Indonesian URL: http://localhost:8080/en/training-topics
+INFO - 2024-10-15 04:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:23:21 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:23:21 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:24:10 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:24:10 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:24:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:24:11 --> English URL: http://localhost:8080/en/about
+DEBUG - 2024-10-15 04:24:11 --> Indonesian URL: http://localhost:8080/en/about
+INFO - 2024-10-15 04:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:24:12 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:24:12 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:24:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:24:17 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:24:17 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:24:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:24:18 --> English URL: http://localhost:8080/en/about
+DEBUG - 2024-10-15 04:24:18 --> Indonesian URL: http://localhost:8080/en/about
+INFO - 2024-10-15 04:24:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:24:19 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:24:19 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:25:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:25:58 --> English URL: http://localhost:8080/en/about
+DEBUG - 2024-10-15 04:25:58 --> Indonesian URL: http://localhost:8080/en/about
+INFO - 2024-10-15 04:25:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:25:59 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:25:59 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:26:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:26:02 --> English URL: http://localhost:8080/en/about
+DEBUG - 2024-10-15 04:26:02 --> Indonesian URL: http://localhost:8080/en/about
+INFO - 2024-10-15 04:26:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:26:03 --> English URL: http://localhost:8080/en/
+DEBUG - 2024-10-15 04:26:03 --> Indonesian URL: http://localhost:8080/en/
+INFO - 2024-10-15 04:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:26:06 --> English URL: http://localhost:8080/id/
+DEBUG - 2024-10-15 04:26:06 --> Indonesian URL: http://localhost:8080/id/
+INFO - 2024-10-15 04:28:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:28:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:28:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:28:28 --> Generated URL: http://localhost:8080/id/training-topics/negotiation-training
+INFO - 2024-10-15 04:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:28:30 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-negosiasi
+INFO - 2024-10-15 04:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:28:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:28:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:28:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:29:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:29:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:29:14 --> Generated URL: http://localhost:8080/en/materi-pelatihan/pelatihan-negosiasi
+INFO - 2024-10-15 04:30:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:30:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:30:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-10-15 04:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2024-10-15 04:30:33 --> Generated URL: http://localhost:8080/id/training-topics/negotiation-training

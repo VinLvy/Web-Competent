@@ -1,5 +1,5 @@
 <?php
-$lang = session()->get('lang') ?? 'en';
+$lang = session()->get('lang') ?? 'id';
 ?>
 
 <!DOCTYPE html>
