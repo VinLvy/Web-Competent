@@ -28,7 +28,7 @@ class Homectrl extends BaseController
 
     public function index()
     {
-        $lang = session()->get('lang') ?? 'en';
+        $lang = session()->get('lang') ?? 'id';
 
         $meta = $this->MetaModel->where('nama_halaman', 'Beranda')->first();
 
