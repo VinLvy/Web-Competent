@@ -85,7 +85,7 @@ class Aktivitasctrl extends BaseController
         $slug_baru = ($lang === 'id') ? $slug_id : $slug_en;
 
         // Tentukan prefix URL berdasarkan bahasa
-        $prefix_url = ($lang === 'id') ? 'aktivitas' : 'activities';
+        $prefix_url = ($lang === 'id') ? 'klien' : 'clients';
 
         // Jika slug di URL tidak sesuai dengan bahasa yang dipilih, redirect ke slug yang benar
         if ($slug_aktivitas !== $slug_baru) {

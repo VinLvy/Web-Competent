@@ -23,8 +23,8 @@ class LanguageFilter implements FilterInterface
                 $lang = $session->get('lang');
             } else {
                 // Jika session bahasa tidak ada, set default ke 'en'
-                $session->set('lang', 'en');
-                $lang = 'en';
+                $session->set('lang', 'id');
+                $lang = 'id';
             }
 
             // Redirect ke URL dengan bahasa yang diset
