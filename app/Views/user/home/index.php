@@ -117,6 +117,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <!-- Menampilkan artikel terbaru secara otomatis -->
+                <a href="<?= base_url($lang . '/' . ($lang === 'en' ? 'blogs' : 'blog') . '/' . ($lang === 'en' ? $artikelterbaru[0]->slug_en : $artikelterbaru[0]->slug_id)) ?>" class="article-card-link" style="text-decoration: none;">
                 <div class="position-relative mb-3">
                     <img class="img-fluid w-100" src="<?= base_url('asset-user/images/' . $artikelterbaru[0]->foto_artikel); ?>" alt="<?= $artikelterbaru[0]->judul_artikel ?>" style="object-fit: cover;">
                     <div class="bg-white border border-top-0 p-4">
@@ -135,6 +136,7 @@
                         </p>
                     </div>
                 </div>
+                </a>
                 <!-- End Artikel Terbaru -->
             </div>
 

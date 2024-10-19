@@ -89,9 +89,9 @@
                             <?php echo lang('Blog.headerLanguage'); ?> <i class="fa fa-caret-down"></i>
                         </a>
                         <div class="dropdown-menu text-capitalize" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="<?= $english_url ?>">English</a>
-                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?= $indonesia_url ?>">Indonesia</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="<?= $english_url ?>">English</a>
                         </div>
                     </div>
                 </div>
