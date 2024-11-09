@@ -1,0 +1,79 @@
+INFO - 2024-11-09 02:51:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:51:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-11-09 02:51:26 --> mysqli_sql_exception: MySQL server has gone away in D:\Documents\PKL\Web Pribadi\competent-academy\competent\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 D:\Documents\PKL\Web Pribadi\competent-academy\competent\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 D:\Documents\PKL\Web Pribadi\competent-academy\competent\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 D:\Documents\PKL\Web Pribadi\competent-academy\competent\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 D:\Documents\PKL\Web Pribadi\competent-academy\competent\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\Documents\PKL\Web Pribadi\competent-academy\competent\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Documents\PKL\Web Pribadi\competent-academy\competent\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 D:\Documents\PKL\Web Pribadi\competent-academy\competent\app\Controllers\user\Homectrl.php(33): CodeIgniter\BaseModel->first()
+#7 D:\Documents\PKL\Web Pribadi\competent-academy\competent\system\CodeIgniter.php(932): App\Controllers\user\Homectrl->index()
+#8 D:\Documents\PKL\Web Pribadi\competent-academy\competent\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\user\Homectrl))
+#9 D:\Documents\PKL\Web Pribadi\competent-academy\competent\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Documents\PKL\Web Pribadi\competent-academy\competent\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 D:\Documents\PKL\Web Pribadi\competent-academy\competent\system\Commands\Server\rewrite.php(47): require_once('D:\\Documents\\PK...')
+#12 {main}
+CRITICAL - 2024-11-09 02:51:26 --> MySQL server has gone away
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `tb_meta`
+WHERE `nama_halaman` = \'Beranda\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tb_meta`
+WHERE `nama_halaman` = \'Beranda\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tb_meta`
+WHERE `nama_halaman` = \'Beranda\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tb_meta`
+WHERE `nama_halaman` = :nama_halaman:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\user\Homectrl.php(33): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\user\Homectrl->index()
+ 9 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\user\Homectrl))
+10 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Documents\\PKL\\Web Pribadi\\competent-academy\\competent\\public\\index.php')
+INFO - 2024-11-09 02:51:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:51:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:52:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:52:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:52:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:54:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:54:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-09 02:54:13 --> Undefined property: stdClass::$slug_in
+in APPPATH\Controllers\user\Sitemapctrl.php on line 42.
+ 1 APPPATH\Controllers\user\Sitemapctrl.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$slug_in', 'D:\\Documents\\PKL\\Web Pribadi\\competent-academy\\competent\\app\\Controllers\\user\\Sitemapctrl.php', 42)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\user\Sitemapctrl->index()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\user\Sitemapctrl))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Documents\\PKL\\Web Pribadi\\competent-academy\\competent\\public\\index.php')
+INFO - 2024-11-09 02:54:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-09 02:54:21 --> Undefined property: stdClass::$slug_in
+in APPPATH\Controllers\user\Sitemapctrl.php on line 48.
+ 1 APPPATH\Controllers\user\Sitemapctrl.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$slug_in', 'D:\\Documents\\PKL\\Web Pribadi\\competent-academy\\competent\\app\\Controllers\\user\\Sitemapctrl.php', 48)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\user\Sitemapctrl->index()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\user\Sitemapctrl))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Documents\\PKL\\Web Pribadi\\competent-academy\\competent\\public\\index.php')
+INFO - 2024-11-09 02:54:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:54:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:54:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:54:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:54:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-09 02:55:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

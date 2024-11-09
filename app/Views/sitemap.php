@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitemap - Indonesian Exporter</title>
+    <title>Sitemap - Competent Academy</title>
     <style>
         body {
             font-family: Arial, sans-serif;
