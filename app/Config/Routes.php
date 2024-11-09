@@ -97,6 +97,7 @@ $routes->group('id', function ($routes) {
     // routes halaman artikel
     $routes->get('blog', 'user\Artikelctrl::index');
     $routes->get('blog/(:segment)', 'user\Artikelctrl::detail/$1');
+    $routes->get('sitemap', 'user\Sitemapctrl::index');
 });
 
 $routes->group('en', function ($routes) {
@@ -114,6 +115,7 @@ $routes->group('en', function ($routes) {
     // routes halaman artikel
     $routes->get('blogs', 'user\Artikelctrl::index');
     $routes->get('blogs/(:segment)', 'user\Artikelctrl::detail/$1');
+    $routes->get('sitemap', 'user\Sitemapctrl::index');
 });
 
 
